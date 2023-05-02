@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.m
-//  ObjcPractice
+//  BasicGrammar
 //
-//  Created by song on 2023/03/27.
+//  Created by song on 2023/05/03.
 //
 
 #import "SceneDelegate.h"
