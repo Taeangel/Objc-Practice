@@ -15,17 +15,15 @@
 - (void)viewDidLoad {
   
   [super viewDidLoad];
-  // Do any additional setup after loading the view.
   
-  BOOL isDark = YES;
-  BOOL isLight = YES;
-    
-  if (!isDark) {
-    NSLog(@"다크모드입니다!! %@", isDark ? @"다크" : @"라이트");
-  } else {
+  SEL btnSelector = @selector(onTestBtnClicked:);
+  
+  [_selecterTest addTarget: self action: btnSelector forControlEvents:UIControlEventTouchUpInside];
 
-    NSLog(@"라이모드입니다!! %@", isDark ? @"다크" : @"라이트");
-  }
+}
+
+- (void)onTestBtnClicked:(UIButton *) sender {
+  NSLog(@"name: %@, btnTitle: %@", NSStringFromSelector(_cmd), sender.titleLabel.text);
 }
 
 @end
