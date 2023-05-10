@@ -9,7 +9,6 @@
 
 @implementation BlockTest
 
-
 - (instancetype)init
 {
   self = [super init];
@@ -18,13 +17,31 @@
       
       NSLog(@"%s , line: %dm %@",__func__, __LINE__, @"someBlock호출");
     };
+    
+    someBlockWithParam = ^(NSString * name){
+      NSLog(@"%s , line: %dm %@",__func__, __LINE__, name);
+    };
+    
+    someBlockWitMultihParam = ^(NSString * name, int age){
+      NSLog(@"%s , line: %d, %@  age: %d",__func__, __LINE__, name, age);
+    };
   }
   return self;
 }
 
 -(void)someFunction {
-  NSLog(@"%s , line: %dm %@",__func__, __LINE__, @"");
+  NSLog(@"%s , line: %d, %@",__func__, __LINE__, @"");
   someBlock();
 }
 
+-(void)someFunctionWithParam:(NSString *)name {
+  NSLog(@"%s , line: %d, %@",__func__, __LINE__, name);
+  
+  someBlockWithParam(name);
+}
+
+- (void)someFunctionWithMultiParam:(NSString *)name withAge:(int)age {
+  NSLog(@"%s , line: %d, %@ age: %d",__func__, __LINE__, name, age);
+  someBlockWitMultihParam(name, age);
+}
 @end

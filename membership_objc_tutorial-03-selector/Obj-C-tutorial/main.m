@@ -29,7 +29,8 @@ int main(int argc, char * argv[]) {
       BlockTest * blockTest = [[BlockTest alloc] init];
       
       
-      [blockTest someFunction];
+//      [blockTest someFunction];
+      [blockTest someFunctionWithParam:@"이름"];
       
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
