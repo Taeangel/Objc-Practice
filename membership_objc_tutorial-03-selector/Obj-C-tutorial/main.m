@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "Pet.h"
-
+#import "Cat.h"
 int main(int argc, char * argv[]) {
     NSString * appDelegateClassName;
     @autoreleasepool {
@@ -16,9 +16,13 @@ int main(int argc, char * argv[]) {
         appDelegateClassName = NSStringFromClass([AppDelegate class]);
       
       
-      Pet * cat = [[Pet alloc] init];
-      
-      [cat doCry: @"야옹"];
+//      Pet * cat = [[Pet alloc] init];
+//
+//      [cat doCry: @"야옹"];
+//
+      Cat * cat1 = [[Cat alloc] init];
+      Cat * cat2 = [[Cat alloc] initWithAge:0];
+      Cat * cat3 = [[Cat alloc] initWithNameAndAge:@"고양이" age:3];
       
       
     }
