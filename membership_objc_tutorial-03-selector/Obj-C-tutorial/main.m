@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Pet.h"
 #import "Cat.h"
+#import "BlockTest.h"
 int main(int argc, char * argv[]) {
     NSString * appDelegateClassName;
     @autoreleasepool {
@@ -20,9 +21,15 @@ int main(int argc, char * argv[]) {
 //
 //      [cat doCry: @"야옹"];
 //
-      Cat * cat1 = [[Cat alloc] init];
-      Cat * cat2 = [[Cat alloc] initWithAge:0];
-      Cat * cat3 = [[Cat alloc] initWithName:@"이름" age:3];
+//      Cat * cat1 = [[Cat alloc] init];
+//      Cat * cat2 = [[Cat alloc] initWithAge:0];
+//      Cat * cat3 = [[Cat alloc] initWithName:@"이름" age:3];
+      
+      
+      BlockTest * blockTest = [[BlockTest alloc] init];
+      
+      
+      [blockTest someFunction];
       
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);

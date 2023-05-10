@@ -56,17 +56,17 @@
 //  NSLog(@"%@", [aFriend nickname]);
   
   //MARK: 카테고리 extension 같은거임
-  Friend * aFriend = [[Friend alloc] init];
-  
-  [aFriend setNickname:@"닉네임 정했어"];
-  
-  NSLog(@"카테고리에 있는 함수로 정보가져오기 %@", [aFriend getInfo]);
-  
-  NSDate * today = [NSDate date];
-  
-  NSDate * yesterday = [NSDate dateWithTimeIntervalSinceNow: -(60.0f*60.0f*24.0f)];
-  
-  NSLog([yesterday isToday] ? @"오늘입니다": @"아닙니다");
+//  Friend * aFriend = [[Friend alloc] init];
+//  
+//  [aFriend setNickname:@"닉네임 정했어"];
+//  
+//  NSLog(@"카테고리에 있는 함수로 정보가져오기 %@", [aFriend getInfo]);
+//  
+//  NSDate * today = [NSDate date];
+//  
+//  NSDate * yesterday = [NSDate dateWithTimeIntervalSinceNow: -(60.0f*60.0f*24.0f)];
+//  
+//  NSLog([yesterday isToday] ? @"오늘입니다": @"아닙니다");
   
 }
 

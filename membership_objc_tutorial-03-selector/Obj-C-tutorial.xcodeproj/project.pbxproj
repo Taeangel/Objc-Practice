@@ -11,6 +11,7 @@
 		86E56E542A0B5CB700BACFCB /* NSDate+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E532A0B5CB700BACFCB /* NSDate+Helpers.m */; };
 		86E56E5D2A0B6DDE00BACFCB /* Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E5C2A0B6DDE00BACFCB /* Pet.m */; };
 		86E56E612A0B79BD00BACFCB /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E602A0B79BD00BACFCB /* Cat.m */; };
+		86E56E652A0B879F00BACFCB /* BlockTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E642A0B879F00BACFCB /* BlockTest.m */; };
 		F2AA6F06296289C400483515 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2AA6F05296289C400483515 /* AppDelegate.m */; };
 		F2AA6F09296289C400483515 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2AA6F08296289C400483515 /* SceneDelegate.m */; };
 		F2AA6F0C296289C400483515 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2AA6F0B296289C400483515 /* ViewController.m */; };
@@ -30,6 +31,8 @@
 		86E56E5C2A0B6DDE00BACFCB /* Pet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pet.m; sourceTree = "<group>"; };
 		86E56E5F2A0B79BD00BACFCB /* Cat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
 		86E56E602A0B79BD00BACFCB /* Cat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
+		86E56E632A0B879F00BACFCB /* BlockTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockTest.h; sourceTree = "<group>"; };
+		86E56E642A0B879F00BACFCB /* BlockTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockTest.m; sourceTree = "<group>"; };
 		F2AA6F01296289C400483515 /* Obj-C-tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Obj-C-tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2AA6F04296289C400483515 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F2AA6F05296289C400483515 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -114,6 +117,15 @@
 			path = "Convenience Init";
 			sourceTree = "<group>";
 		};
+		86E56E622A0B877D00BACFCB /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				86E56E632A0B879F00BACFCB /* BlockTest.h */,
+				86E56E642A0B879F00BACFCB /* BlockTest.m */,
+			);
+			path = Block;
+			sourceTree = "<group>";
+		};
 		F2AA6EF8296289C400483515 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +152,7 @@
 				86E56E582A0B5E7300BACFCB /* Friend */,
 				86E56E5A2A0B6DA300BACFCB /* ClassExtension */,
 				86E56E5E2A0B795800BACFCB /* Convenience Init */,
+				86E56E622A0B877D00BACFCB /* Block */,
 				F2AA6F0D296289C400483515 /* Main.storyboard */,
 				F2AA6F10296289C500483515 /* Assets.xcassets */,
 				F2AA6F12296289C500483515 /* LaunchScreen.storyboard */,
@@ -226,6 +239,7 @@
 				F2AA6F1F29628AF800483515 /* Friend.m in Sources */,
 				F2AA6F06296289C400483515 /* AppDelegate.m in Sources */,
 				F2AA6F17296289C500483515 /* main.m in Sources */,
+				86E56E652A0B879F00BACFCB /* BlockTest.m in Sources */,
 				F2AA6F09296289C400483515 /* SceneDelegate.m in Sources */,
 				86E56E542A0B5CB700BACFCB /* NSDate+Helpers.m in Sources */,
 			);
