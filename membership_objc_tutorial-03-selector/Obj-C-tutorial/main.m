@@ -22,8 +22,7 @@ int main(int argc, char * argv[]) {
 //
       Cat * cat1 = [[Cat alloc] init];
       Cat * cat2 = [[Cat alloc] initWithAge:0];
-      Cat * cat3 = [[Cat alloc] initWithNameAndAge:@"고양이" age:3];
-      
+      Cat * cat3 = [[Cat alloc] initWithName:@"이름" age:3];
       
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);

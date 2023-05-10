@@ -19,7 +19,7 @@
   return self;
 }
 
-- (id)initWithAge:(int)ageValue {
+- (id)initWithAge:(int)ageValue NS_SWIFT_NAME(initWithAge(ageValue:)); {
   self = [super init];
   if (self) {
     age = ageValue;
@@ -28,7 +28,7 @@
   return self;
 }
 
-- (id)initWithName:(NSString *)nameValue {
+- (id)initWithName:(NSString *) nameValue {
   self = [super init];
   if (self) {
     age = 0;

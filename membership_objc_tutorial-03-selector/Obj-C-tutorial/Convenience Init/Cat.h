@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (id) initWithName:(NSString *)nameValue;
 - (id) initWithAge:(int)ageValue;
-- (id) initWithNameAndAge: (NSString *) nameValue age:(int)ageValue;
+- (id) initWithName: (NSString *) nameValue age:(int)ageValue NS_SWIFT_NAME(initWithNameAndAge(nameValue:ageValue:));
 @end
 
 NS_ASSUME_NONNULL_END
