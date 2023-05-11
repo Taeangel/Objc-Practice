@@ -28,9 +28,16 @@ int main(int argc, char * argv[]) {
       
       BlockTest * blockTest = [[BlockTest alloc] init];
       
+//      [blockTest someFunctionWithBlockParam:^(NSString * name) {
+//        NSLog(@"%s , line: %d, %@",__func__, __LINE__, name);
+//      }];
+//
+//      [blockTest someFunctionWithtypedef:^(NSString * name) {
+//              NSLog(@"%s , line: %d, %@",__func__, __LINE__, name);
+//      }];
       
-//      [blockTest someFunction];
-      [blockTest someFunctionWithParam:@"이름"];
+//      [blockTest someFunctionWithMultiParam:@"asd" withAge:3];
+      
       
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);

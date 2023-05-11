@@ -9,10 +9,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NSString * String;
+
+typedef void(^DoneBlock)(NSString *);
+
 @interface BlockTest : NSObject
 {
-  void (^someBlock)(void);
+  String myString;
   
+  void (^someBlock)(void);
   void (^someBlockWithParam) (NSString *);
   void (^someBlockWitMultihParam) (NSString *, int);
 }
@@ -22,6 +27,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)someFunctionWithParam: (NSString *)name;
 
 - (void)someFunctionWithMultiParam: (NSString *)name withAge: (int) age;
+
+- (void)someFunctionWithBlockParam:(void(^)(NSString *))done;
+//위에꺼랑 똑같은 역할을 한다.
+- (void)someFunctionWithtypedef:(DoneBlock)done;
 @end
 
 NS_ASSUME_NONNULL_END

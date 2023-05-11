@@ -9,7 +9,8 @@
 #import "Friend.h"
 #import "Friend+info.h"
 #import "NSDate+Helpers.h"
-
+#import "MyPet.h"
+#import "Cat.h"
 @interface ViewController ()
 
 @end
@@ -68,8 +69,15 @@
 //  
 //  NSLog([yesterday isToday] ? @"오늘입니다": @"아닙니다");
   
+  Cat * myCat = [[Cat alloc] init];
+  
+  [self callMyPet: myCat];
+  
 }
 
+- (void)callMyPet:(id<MyPet>)pet {
+  NSLog(@"%s , line: %d, %@",__func__, __LINE__, [pet class]);
+}
 
 - (void)onTestBtnClicked:(UIButton *) sender {
   NSLog(@"name: %@, btnTitle: %@ ", NSStringFromSelector(_cmd), sender.titleLabel.text);

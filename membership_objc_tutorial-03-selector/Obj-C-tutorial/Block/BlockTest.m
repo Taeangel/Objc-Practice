@@ -14,7 +14,6 @@
   self = [super init];
   if (self) {
     someBlock = ^{
-      
       NSLog(@"%s , line: %dm %@",__func__, __LINE__, @"someBlock호출");
     };
     
@@ -29,9 +28,11 @@
   return self;
 }
 
+
+
+
 -(void)someFunction {
   NSLog(@"%s , line: %d, %@",__func__, __LINE__, @"");
-  someBlock();
 }
 
 -(void)someFunctionWithParam:(NSString *)name {
@@ -44,4 +45,17 @@
   NSLog(@"%s , line: %d, %@ age: %d",__func__, __LINE__, name, age);
   someBlockWitMultihParam(name, age);
 }
+
+- (void)someFunctionWithBlockParam:(void (^)(NSString * _Nonnull))done
+{
+  NSLog(@"%s , line: %d, %@",__func__, __LINE__, @"");
+  done(@"완료");
+}
+
+- (void)someFunctionWithtypedef:(DoneBlock)done
+{
+  NSLog(@"%s , line: %d, %@",__func__, __LINE__, @"");
+  done(@"완료");
+}
+
 @end
