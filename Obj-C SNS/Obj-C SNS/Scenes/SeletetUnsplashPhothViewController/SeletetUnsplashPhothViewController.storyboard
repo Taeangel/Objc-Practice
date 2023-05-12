@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Seletet Unsplash Photh View Controller-->
+        <!--이미지선택-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="SeletetUnsplashPhothViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SeletetUnsplashPhothViewController" sceneMemberID="viewController">
@@ -52,24 +52,6 @@
                                     </collectionView>
                                 </subviews>
                             </stackView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C6P-OS-62m">
-                                <rect key="frame" x="0.0" y="27" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="이미지 선택" id="Wi0-gB-fht">
-                                        <barButtonItem key="leftBarButtonItem" title="닫기" id="HCE-KT-IOi" userLabel="닫기">
-                                            <connections>
-                                                <action selector="onDismissBtnClicked:" destination="Y6W-OH-hqX" id="AcK-pb-xg5"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="선택완료" id="A02-aG-vNX" userLabel="선택완료">
-                                            <connections>
-                                                <action selector="onPhotoSelectFinished:" destination="Y6W-OH-hqX" id="i64-Qf-TKu"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -80,6 +62,18 @@
                             <constraint firstItem="fnJ-xQ-rRc" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="qpT-77-wdg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="이미지선택" id="WZ6-Y7-DIb">
+                        <barButtonItem key="leftBarButtonItem" title="닫기" id="jFA-rQ-PMv">
+                            <connections>
+                                <action selector="onDismissBtnClicked:" destination="Y6W-OH-hqX" id="5IY-AV-xEy"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="선택완료" id="RZ1-ic-SdC">
+                            <connections>
+                                <action selector="onChooseFinished:" destination="Y6W-OH-hqX" id="j8e-Ws-1rS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="photoSearchBar" destination="caE-SJ-pyg" id="dsq-Ex-l9q"/>
                     </connections>

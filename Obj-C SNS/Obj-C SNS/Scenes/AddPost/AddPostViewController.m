@@ -51,6 +51,8 @@
 
 - (IBAction)onPhotoSelectBtnClicked:(UIButton *)sender {
   NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"사진선택 클릭");
+  
+  [SeletetUnsplashPhothViewController presentWithNavigation:self];
 }
 
 // MARK: 인스턴스 메서드

@@ -19,17 +19,21 @@
     // Do any additional setup after loading the view.
 }
 - (IBAction)onDismissBtnClicked:(id)sender {
+  NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"");
   
   [self dismissViewControllerAnimated:YES completion:nil];
 }
-- (IBAction)onPhotoSelectFinished:(id)sender {
-  
+- (IBAction)onChooseFinished:(id)sender {
+  NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"");
   
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-  NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"");
+  NSLog(@"%s , line: %d, %@", __func__, __LINE__, searchText);
+  
+  
 }
 
 

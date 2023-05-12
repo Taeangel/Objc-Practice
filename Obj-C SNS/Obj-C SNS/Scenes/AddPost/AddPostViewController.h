@@ -8,6 +8,8 @@
 #import <UIKit/UIKit.h>
 #import "Post.h"
 #import "Constant.h"
+#import "SeletetUnsplashPhothViewController.h"
+#import "UIViewController+Popup.h"
 
 @import FirebaseCore;
 @import FirebaseFirestore;

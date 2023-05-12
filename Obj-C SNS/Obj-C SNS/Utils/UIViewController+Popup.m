@@ -15,11 +15,26 @@
   
   UIStoryboard * storyboard = [UIStoryboard storyboardWithName:className bundle:nil];
   
-  UIViewController * addPostvc = [storyboard instantiateViewControllerWithIdentifier:className];
+  UIViewController * popVc = [storyboard instantiateViewControllerWithIdentifier:className];
   
-  [addPostvc setModalPresentationStyle: UIModalPresentationFullScreen];
+  [popVc setModalPresentationStyle: UIModalPresentationFullScreen];
   
-  [caller presentViewController:addPostvc animated:YES completion:nil];
+  [caller presentViewController:popVc animated:YES completion:nil];
 }
 
++ (void)presentWithNavigation:(UIViewController *)caller {
+  
+  NSString * className = NSStringFromClass([self class]);
+  
+  UIStoryboard * storyboard = [UIStoryboard storyboardWithName:className bundle:nil];
+  
+  UIViewController * popVc = [storyboard instantiateViewControllerWithIdentifier:className];
+  
+  UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:popVc];
+  
+  
+  [navController setModalPresentationStyle: UIModalPresentationFullScreen];
+  
+  [caller presentViewController:navController animated:YES completion:nil];
+}
 @end
