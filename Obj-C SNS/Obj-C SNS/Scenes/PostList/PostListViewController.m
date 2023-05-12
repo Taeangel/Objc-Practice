@@ -25,7 +25,7 @@
   // Do any additional setup after loading the view.
   
   [self initialSettion];
-
+  
   __weak PostListViewController * weakSelf = self;
   
   [self fetchPosts:^(NSMutableArray<Post *> * fetchedPost ) {
@@ -36,7 +36,18 @@
       [strongSelf->_postListTableView reloadData];
     }
   }];
+  
+  [[NSNotificationCenter defaultCenter]
+   addObserver: self
+   selector: @selector(handleNotification:)
+   name:PostListVCShouldFetchListNotification object:nil];
+}
 
+- (void)dealloc {
+  [[NSNotificationCenter defaultCenter]
+   removeObserver:self
+   name:PostListVCShouldFetchListNotification
+   object:nil];
 }
 
 -(void) initialSettion {
@@ -48,7 +59,26 @@
   
   [_postListTableView registerNib:postCellNib forCellReuseIdentifier: PostTableViewCell.cellReuseIdentifier];
 }
- 
+
+// MARK: Selector
+
+- (void) handleNotification:(NSNotification *) notification {
+  
+  if ([[notification name] isEqualToString:PostListVCShouldFetchListNotification]) {
+    __weak PostListViewController * weakSelf = self;
+    
+    [self fetchPosts:^(NSMutableArray<Post *> * fetchedPost ) {
+      PostListViewController * strongSelf = weakSelf;
+      
+      if (strongSelf) {
+        strongSelf->postList = fetchedPost;
+        [strongSelf->_postListTableView reloadData];
+      }
+    }];
+  }
+}
+
+
 // MARK: 테이블뷰 데이터소스
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -81,11 +111,11 @@
     } else {
       tempPostList = [Post fromFIRQureySnapshot:snapshot];
       completion(tempPostList);
-//      PostListViewController * strongSelf = weakSelf;
-//
-//      if (strongSelf) {
-//        strongSelf->postList = [Post fromFIRQureySnapshot:snapshot];
-//      }
+      //      PostListViewController * strongSelf = weakSelf;
+      //
+      //      if (strongSelf) {
+      //        strongSelf->postList = [Post fromFIRQureySnapshot:snapshot];
+      //      }
       
       
     }

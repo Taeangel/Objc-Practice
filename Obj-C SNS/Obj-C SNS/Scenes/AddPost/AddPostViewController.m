@@ -33,10 +33,20 @@
 - (IBAction)onAddPostBtnClicked:(UIButton *)sender {
   NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"포스트 버튼 클릭");
   
+  __weak AddPostViewController * weakSelf = self;
+  
   NSString * titleInput = _titleTestField.text ? : @"";
   NSString * contentInput = _contentTextField.text ? : @"";
   
-  [self addPostWithTitle:titleInput withContent:contentInput];
+  [self addPostWithTitle:titleInput
+             withContent:contentInput
+          withCompletion:^{
+    NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"컴플리션 완료");
+    AddPostViewController * strongSelf = weakSelf;
+    if (strongSelf) {
+      [strongSelf dismissViewControllerAnimated:YES completion:nil];
+    }
+}];
 }
 
 - (IBAction)onPhotoSelectBtnClicked:(UIButton *)sender {
@@ -44,7 +54,10 @@
 }
 
 // MARK: 인스턴스 메서드
--(void) addPostWithTitle:(NSString * )title withContent: (NSString *) content {
+-(void) addPostWithTitle: (NSString * )title
+             withContent: (NSString *) content
+          withCompletion: (void(^)(void)) completion// 첫번째 보이드가 반환 두번쨰 보이드가 매개변수
+{
   FIRDocumentReference * newPostRef = [[self.db collectionWithPath:@"posts"] documentWithAutoID];
   
   NSDictionary *newPostDictionary = @{
@@ -62,13 +75,18 @@
     if (error != nil) {
       NSLog(@"Error getting document: %@", error);
     } else {
-      NSLog(@"포스팅 추가 성공 - refId: %@", newPostRef.documentID);
-    }
+//      NSLog(@"포스팅 추가 성공 - refId: %@", newPostRef.documentID);
+      
+      [[NSNotificationCenter defaultCenter]postNotificationName:PostListVCShouldFetchListNotification object:self];
+      
+      
+      
+      
+      
+      completion();
+    } 
   }];
   
 }
-
-
-
 
 @end

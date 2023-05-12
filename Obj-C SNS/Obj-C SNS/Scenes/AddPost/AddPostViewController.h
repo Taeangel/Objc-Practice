@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
+#import "Constant.h"
 
 @import FirebaseCore;
 @import FirebaseFirestore;
