@@ -6,6 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
+
+@import FirebaseCore;
+@import FirebaseFirestore;
 
 NS_ASSUME_NONNULL_BEGIN
 

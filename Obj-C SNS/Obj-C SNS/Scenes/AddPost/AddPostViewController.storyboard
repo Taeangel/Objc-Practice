@@ -32,6 +32,9 @@
                                                 <rect key="frame" x="16" y="326" width="361" height="34.333333333333314"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" image="photo.artframe" catalog="system" title="이미지 선택" imagePadding="10"/>
+                                                <connections>
+                                                    <action selector="onPhotoSelectBtnClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oO5-32-ebO"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="타이틀을 입력해 주세요!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DuP-Fc-mRt">
                                                 <rect key="frame" x="16" y="370.33333333333337" width="361" height="34"/>
@@ -78,6 +81,9 @@
                                         <rect key="frame" x="331.33333333333331" y="8" width="53.666666666666686" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="등록"/>
+                                        <connections>
+                                            <action selector="onAddPostBtnClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pWq-Ce-ecp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -98,6 +104,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="add" image="plus" catalog="system" id="whj-Gr-Mow"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="contentTextField" destination="r6b-cg-SWk" id="dWm-CW-Bmp"/>
+                        <outlet property="postImageView" destination="JGf-Fc-c7k" id="UWL-v4-LJM"/>
+                        <outlet property="titleTestField" destination="DuP-Fc-mRt" id="m5S-nX-Deu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

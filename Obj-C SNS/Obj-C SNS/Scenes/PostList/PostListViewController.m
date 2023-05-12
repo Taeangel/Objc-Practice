@@ -65,29 +65,6 @@
 }
 // MARK: 포스트 데이터
 
--(void) addPost {
-  FIRDocumentReference * newPostRef = [[self.db collectionWithPath:@"posts"] documentWithAutoID];
-  
-  NSDictionary *newPostDictionary = @{
-    @"identifier": newPostRef.documentID,
-    @"title": @"말",
-    @"content": @"말과함께",
-    @"image": @"https://images.unsplash.com/photo-1675879102146-810c95632b5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0NXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
-    @"created_at": [FIRTimestamp timestampWithDate:[NSDate date]],
-    @"updated_at": [FIRTimestamp timestampWithDate:[NSDate date]],
-  };
-  
-  [newPostRef setData:newPostDictionary completion:^(NSError * _Nullable error) {
-    NSLog(@"%s , line: %d, %@", __func__, __LINE__, [error localizedDescription]);
-    
-    if (error != nil) {
-      NSLog(@"Error getting document: %@", error);
-    } else {
-      NSLog(@"포스팅 추가 성공 - refId: %@", newPostRef.documentID);
-    }
-  }];
-  
-}
 
 -(void) fetchPosts:(void(^)(NSMutableArray<Post *> *)) completion{
   
