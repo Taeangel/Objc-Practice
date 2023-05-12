@@ -19,7 +19,7 @@
 		86B2B64F2A0E30D5004914B3 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 86B2B64E2A0E30D5004914B3 /* SDWebImage */; };
 		86B2B6542A0E3760004914B3 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6532A0E3760004914B3 /* MainTabBarController.m */; };
 		86B2B6572A0E559B004914B3 /* UIViewController+Popup.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6562A0E559B004914B3 /* UIViewController+Popup.m */; };
-		86B2B6592A0E6404004914B3 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6582A0E6404004914B3 /* Constants.m */; };
+		86B2B6592A0E6404004914B3 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6582A0E6404004914B3 /* constants.m */; };
 		86B2B65E2A0E8AE2004914B3 /* SeletetUnsplashPhothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B65D2A0E8AE2004914B3 /* SeletetUnsplashPhothViewController.m */; };
 		86B2B6602A0E8AFF004914B3 /* SeletetUnsplashPhothViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B65F2A0E8AFF004914B3 /* SeletetUnsplashPhothViewController.storyboard */; };
 		86E56E7D2A0CAA7600BACFCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */; };
@@ -48,7 +48,7 @@
 		86B2B6532A0E3760004914B3 /* MainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		86B2B6552A0E559B004914B3 /* UIViewController+Popup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Popup.h"; sourceTree = "<group>"; };
 		86B2B6562A0E559B004914B3 /* UIViewController+Popup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Popup.m"; sourceTree = "<group>"; };
-		86B2B6582A0E6404004914B3 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		86B2B6582A0E6404004914B3 /* constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
 		86B2B65A2A0E641F004914B3 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		86B2B65C2A0E8AE2004914B3 /* SeletetUnsplashPhothViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeletetUnsplashPhothViewController.h; sourceTree = "<group>"; };
 		86B2B65D2A0E8AE2004914B3 /* SeletetUnsplashPhothViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeletetUnsplashPhothViewController.m; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 				86B2B6552A0E559B004914B3 /* UIViewController+Popup.h */,
 				86B2B6562A0E559B004914B3 /* UIViewController+Popup.m */,
 				86B2B65A2A0E641F004914B3 /* Constant.h */,
-				86B2B6582A0E6404004914B3 /* Constants.m */,
+				86B2B6582A0E6404004914B3 /* constants.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 				86B2B6572A0E559B004914B3 /* UIViewController+Popup.m in Sources */,
 				86E56E832A0CAA7600BACFCB /* PostListViewController.m in Sources */,
 				86B2B65E2A0E8AE2004914B3 /* SeletetUnsplashPhothViewController.m in Sources */,
-				86B2B6592A0E6404004914B3 /* Constants.m in Sources */,
+				86B2B6592A0E6404004914B3 /* constants.m in Sources */,
 				86B2B6402A0DFA20004914B3 /* AddPostViewController.m in Sources */,
 				86B2B6462A0DFEA5004914B3 /* PostTableViewCell.m in Sources */,
 				86E56E7D2A0CAA7600BACFCB /* AppDelegate.m in Sources */,
