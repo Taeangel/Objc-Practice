@@ -10,6 +10,9 @@
 		86B2B6302A0CACDE004914B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B62F2A0CACDE004914B3 /* GoogleService-Info.plist */; };
 		86B2B6332A0CB16A004914B3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 86B2B6322A0CB16A004914B3 /* FirebaseFirestore */; };
 		86B2B6372A0DE6E2004914B3 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6362A0DE6E2004914B3 /* Post.m */; };
+		86B2B63B2A0DF8CA004914B3 /* PostListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B63A2A0DF8CA004914B3 /* PostListViewController.storyboard */; };
+		86B2B6402A0DFA20004914B3 /* AddPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B63F2A0DFA20004914B3 /* AddPostViewController.m */; };
+		86B2B6422A0DFA30004914B3 /* AddPostViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B6412A0DFA30004914B3 /* AddPostViewController.storyboard */; };
 		86E56E7D2A0CAA7600BACFCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */; };
 		86E56E802A0CAA7600BACFCB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E7F2A0CAA7600BACFCB /* SceneDelegate.m */; };
 		86E56E832A0CAA7600BACFCB /* PostListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E822A0CAA7600BACFCB /* PostListViewController.m */; };
@@ -23,6 +26,10 @@
 		86B2B62F2A0CACDE004914B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		86B2B6352A0DE6E2004914B3 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		86B2B6362A0DE6E2004914B3 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		86B2B63A2A0DF8CA004914B3 /* PostListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostListViewController.storyboard; sourceTree = "<group>"; };
+		86B2B63E2A0DFA20004914B3 /* AddPostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddPostViewController.h; sourceTree = "<group>"; };
+		86B2B63F2A0DFA20004914B3 /* AddPostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddPostViewController.m; sourceTree = "<group>"; };
+		86B2B6412A0DFA30004914B3 /* AddPostViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPostViewController.storyboard; sourceTree = "<group>"; };
 		86E56E782A0CAA7600BACFCB /* Obj-C SNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Obj-C SNS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E56E7B2A0CAA7600BACFCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +65,35 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		86B2B6382A0DF89A004914B3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				86B2B63D2A0DF9F7004914B3 /* AddPost */,
+				86B2B63C2A0DF9E7004914B3 /* PostList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		86B2B63C2A0DF9E7004914B3 /* PostList */ = {
+			isa = PBXGroup;
+			children = (
+				86E56E812A0CAA7600BACFCB /* PostListViewController.h */,
+				86E56E822A0CAA7600BACFCB /* PostListViewController.m */,
+				86B2B63A2A0DF8CA004914B3 /* PostListViewController.storyboard */,
+			);
+			path = PostList;
+			sourceTree = "<group>";
+		};
+		86B2B63D2A0DF9F7004914B3 /* AddPost */ = {
+			isa = PBXGroup;
+			children = (
+				86B2B63E2A0DFA20004914B3 /* AddPostViewController.h */,
+				86B2B63F2A0DFA20004914B3 /* AddPostViewController.m */,
+				86B2B6412A0DFA30004914B3 /* AddPostViewController.storyboard */,
+			);
+			path = AddPost;
+			sourceTree = "<group>";
+		};
 		86E56E6F2A0CAA7600BACFCB = {
 			isa = PBXGroup;
 			children = (
@@ -79,11 +115,10 @@
 			children = (
 				86B2B6342A0DE6C6004914B3 /* Models */,
 				86E56E7B2A0CAA7600BACFCB /* AppDelegate.h */,
+				86B2B6382A0DF89A004914B3 /* Scenes */,
 				86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */,
 				86E56E7E2A0CAA7600BACFCB /* SceneDelegate.h */,
 				86E56E7F2A0CAA7600BACFCB /* SceneDelegate.m */,
-				86E56E812A0CAA7600BACFCB /* PostListViewController.h */,
-				86E56E822A0CAA7600BACFCB /* PostListViewController.m */,
 				86E56E842A0CAA7600BACFCB /* Main.storyboard */,
 				86E56E872A0CAA7700BACFCB /* Assets.xcassets */,
 				86E56E892A0CAA7700BACFCB /* LaunchScreen.storyboard */,
@@ -157,10 +192,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86B2B6422A0DFA30004914B3 /* AddPostViewController.storyboard in Resources */,
 				86E56E8B2A0CAA7700BACFCB /* LaunchScreen.storyboard in Resources */,
 				86B2B6302A0CACDE004914B3 /* GoogleService-Info.plist in Resources */,
 				86E56E882A0CAA7700BACFCB /* Assets.xcassets in Resources */,
 				86E56E862A0CAA7600BACFCB /* Main.storyboard in Resources */,
+				86B2B63B2A0DF8CA004914B3 /* PostListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +210,7 @@
 			files = (
 				86B2B6372A0DE6E2004914B3 /* Post.m in Sources */,
 				86E56E832A0CAA7600BACFCB /* PostListViewController.m in Sources */,
+				86B2B6402A0DFA20004914B3 /* AddPostViewController.m in Sources */,
 				86E56E7D2A0CAA7600BACFCB /* AppDelegate.m in Sources */,
 				86E56E8E2A0CAA7700BACFCB /* main.m in Sources */,
 				86E56E802A0CAA7600BACFCB /* SceneDelegate.m in Sources */,
