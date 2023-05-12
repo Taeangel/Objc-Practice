@@ -1,5 +1,5 @@
 //
-//  AddPostViewController.h
+//  UIViewController+Popup.h
 //  Obj-C SNS
 //
 //  Created by song on 2023/05/12.
@@ -9,8 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AddPostViewController : UIViewController
+@interface UIViewController (Popup)
 
++(void)present:(UIViewController *)caller;
 
 @end
 

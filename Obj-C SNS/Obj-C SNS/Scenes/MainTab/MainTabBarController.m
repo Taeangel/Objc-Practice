@@ -23,13 +23,7 @@
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
   if ([viewController isKindOfClass: [AddPostViewController class]]) {
     
-    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"AddPostViewController" bundle:nil];
-    
-   UIViewController * addPostvc = [storyboard instantiateViewControllerWithIdentifier:@"AddPostViewController"];
-    
-    [addPostvc setModalPresentationStyle: UIModalPresentationFullScreen];
-    
-    [self presentViewController:addPostvc animated:YES completion:nil];
+    [AddPostViewController present: self];
     
     return  NO;
   }

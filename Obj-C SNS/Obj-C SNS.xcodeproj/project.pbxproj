@@ -18,6 +18,7 @@
 		86B2B64C2A0E18C7004914B3 /* NSDate+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B64B2A0E18C7004914B3 /* NSDate+Helpers.m */; };
 		86B2B64F2A0E30D5004914B3 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 86B2B64E2A0E30D5004914B3 /* SDWebImage */; };
 		86B2B6542A0E3760004914B3 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6532A0E3760004914B3 /* MainTabBarController.m */; };
+		86B2B6572A0E559B004914B3 /* UIViewController+Popup.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6562A0E559B004914B3 /* UIViewController+Popup.m */; };
 		86E56E7D2A0CAA7600BACFCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */; };
 		86E56E802A0CAA7600BACFCB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E7F2A0CAA7600BACFCB /* SceneDelegate.m */; };
 		86E56E832A0CAA7600BACFCB /* PostListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E822A0CAA7600BACFCB /* PostListViewController.m */; };
@@ -42,6 +43,8 @@
 		86B2B64B2A0E18C7004914B3 /* NSDate+Helpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helpers.m"; sourceTree = "<group>"; };
 		86B2B6522A0E3760004914B3 /* MainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		86B2B6532A0E3760004914B3 /* MainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		86B2B6552A0E559B004914B3 /* UIViewController+Popup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Popup.h"; sourceTree = "<group>"; };
+		86B2B6562A0E559B004914B3 /* UIViewController+Popup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Popup.m"; sourceTree = "<group>"; };
 		86E56E782A0CAA7600BACFCB /* Obj-C SNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Obj-C SNS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E56E7B2A0CAA7600BACFCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 			children = (
 				86B2B64A2A0E18C7004914B3 /* NSDate+Helpers.h */,
 				86B2B64B2A0E18C7004914B3 /* NSDate+Helpers.m */,
+				86B2B6552A0E559B004914B3 /* UIViewController+Popup.h */,
+				86B2B6562A0E559B004914B3 /* UIViewController+Popup.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 				86B2B64C2A0E18C7004914B3 /* NSDate+Helpers.m in Sources */,
 				86B2B6372A0DE6E2004914B3 /* Post.m in Sources */,
 				86B2B6542A0E3760004914B3 /* MainTabBarController.m in Sources */,
+				86B2B6572A0E559B004914B3 /* UIViewController+Popup.m in Sources */,
 				86E56E832A0CAA7600BACFCB /* PostListViewController.m in Sources */,
 				86B2B6402A0DFA20004914B3 /* AddPostViewController.m in Sources */,
 				86B2B6462A0DFEA5004914B3 /* PostTableViewCell.m in Sources */,
