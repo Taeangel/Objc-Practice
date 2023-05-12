@@ -23,7 +23,7 @@
     
     _title = document.data[@"title"] ? : @"";
     
-    _content = document.data[@"contnet"] ? : @"";
+    _content = document.data[@"content"] ? : @"";
     
     _image = document.data[@"image"] ? : @"";
     
@@ -31,8 +31,8 @@
       _createdAt = [(FIRTimestamp *) document.data[@"created_at"] dateValue];
     }
     
-    if (document.data[@"update_at"]) {
-      _updatedAt = [(FIRTimestamp *) document.data[@"update_at"] dateValue];
+    if (document.data[@"updated_at"]) {
+      _updatedAt = [(FIRTimestamp *) document.data[@"updated_at"] dateValue];
     }
   }
   return  self ;

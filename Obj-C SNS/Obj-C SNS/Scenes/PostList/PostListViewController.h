@@ -7,11 +7,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
+#import "PostTableViewCell.h"
 
 @import FirebaseCore;
 @import FirebaseFirestore;
 
-@interface PostListViewController : UIViewController
+@interface PostListViewController : UIViewController <UITableViewDataSource>
 
 
 @end

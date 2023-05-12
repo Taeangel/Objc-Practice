@@ -9,7 +9,7 @@
         <!--PostListViewController-->
         <scene sceneID="e5d-vC-75t">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="PostListViewController" storyboardName="PostListViewController" referencedIdentifier="PostListViewController" id="nUY-Il-P8Y" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="PostListViewController" storyboardName="PostListViewController" id="nUY-Il-P8Y" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="1Yc-5M-w0R"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fs0-rN-4dW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

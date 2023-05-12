@@ -13,6 +13,10 @@
 		86B2B63B2A0DF8CA004914B3 /* PostListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B63A2A0DF8CA004914B3 /* PostListViewController.storyboard */; };
 		86B2B6402A0DFA20004914B3 /* AddPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B63F2A0DFA20004914B3 /* AddPostViewController.m */; };
 		86B2B6422A0DFA30004914B3 /* AddPostViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B6412A0DFA30004914B3 /* AddPostViewController.storyboard */; };
+		86B2B6462A0DFEA5004914B3 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6452A0DFEA5004914B3 /* PostTableViewCell.m */; };
+		86B2B6482A0DFEBA004914B3 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B6472A0DFEBA004914B3 /* PostTableViewCell.xib */; };
+		86B2B64C2A0E18C7004914B3 /* NSDate+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B64B2A0E18C7004914B3 /* NSDate+Helpers.m */; };
+		86B2B64F2A0E30D5004914B3 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 86B2B64E2A0E30D5004914B3 /* SDWebImage */; };
 		86E56E7D2A0CAA7600BACFCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */; };
 		86E56E802A0CAA7600BACFCB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E7F2A0CAA7600BACFCB /* SceneDelegate.m */; };
 		86E56E832A0CAA7600BACFCB /* PostListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E822A0CAA7600BACFCB /* PostListViewController.m */; };
@@ -30,6 +34,11 @@
 		86B2B63E2A0DFA20004914B3 /* AddPostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddPostViewController.h; sourceTree = "<group>"; };
 		86B2B63F2A0DFA20004914B3 /* AddPostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddPostViewController.m; sourceTree = "<group>"; };
 		86B2B6412A0DFA30004914B3 /* AddPostViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPostViewController.storyboard; sourceTree = "<group>"; };
+		86B2B6442A0DFEA5004914B3 /* PostTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
+		86B2B6452A0DFEA5004914B3 /* PostTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
+		86B2B6472A0DFEBA004914B3 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		86B2B64A2A0E18C7004914B3 /* NSDate+Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helpers.h"; sourceTree = "<group>"; };
+		86B2B64B2A0E18C7004914B3 /* NSDate+Helpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helpers.m"; sourceTree = "<group>"; };
 		86E56E782A0CAA7600BACFCB /* Obj-C SNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Obj-C SNS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E56E7B2A0CAA7600BACFCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -49,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86B2B64F2A0E30D5004914B3 /* SDWebImage in Frameworks */,
 				86B2B6332A0CB16A004914B3 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +87,7 @@
 		86B2B63C2A0DF9E7004914B3 /* PostList */ = {
 			isa = PBXGroup;
 			children = (
+				86B2B6432A0DFE7A004914B3 /* Cell */,
 				86E56E812A0CAA7600BACFCB /* PostListViewController.h */,
 				86E56E822A0CAA7600BACFCB /* PostListViewController.m */,
 				86B2B63A2A0DF8CA004914B3 /* PostListViewController.storyboard */,
@@ -92,6 +103,25 @@
 				86B2B6412A0DFA30004914B3 /* AddPostViewController.storyboard */,
 			);
 			path = AddPost;
+			sourceTree = "<group>";
+		};
+		86B2B6432A0DFE7A004914B3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				86B2B6442A0DFEA5004914B3 /* PostTableViewCell.h */,
+				86B2B6452A0DFEA5004914B3 /* PostTableViewCell.m */,
+				86B2B6472A0DFEBA004914B3 /* PostTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		86B2B6492A0E18A2004914B3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				86B2B64A2A0E18C7004914B3 /* NSDate+Helpers.h */,
+				86B2B64B2A0E18C7004914B3 /* NSDate+Helpers.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		86E56E6F2A0CAA7600BACFCB = {
@@ -113,6 +143,7 @@
 		86E56E7A2A0CAA7600BACFCB /* Obj-C SNS */ = {
 			isa = PBXGroup;
 			children = (
+				86B2B6492A0E18A2004914B3 /* Utils */,
 				86B2B6342A0DE6C6004914B3 /* Models */,
 				86E56E7B2A0CAA7600BACFCB /* AppDelegate.h */,
 				86B2B6382A0DF89A004914B3 /* Scenes */,
@@ -147,6 +178,7 @@
 			name = "Obj-C SNS";
 			packageProductDependencies = (
 				86B2B6322A0CB16A004914B3 /* FirebaseFirestore */,
+				86B2B64E2A0E30D5004914B3 /* SDWebImage */,
 			);
 			productName = "Obj-C SNS";
 			productReference = 86E56E782A0CAA7600BACFCB /* Obj-C SNS.app */;
@@ -177,6 +209,7 @@
 			mainGroup = 86E56E6F2A0CAA7600BACFCB;
 			packageReferences = (
 				86B2B6312A0CB16A004914B3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				86B2B64D2A0E30D5004914B3 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 86E56E792A0CAA7600BACFCB /* Products */;
 			projectDirPath = "";
@@ -196,6 +229,7 @@
 				86E56E8B2A0CAA7700BACFCB /* LaunchScreen.storyboard in Resources */,
 				86B2B6302A0CACDE004914B3 /* GoogleService-Info.plist in Resources */,
 				86E56E882A0CAA7700BACFCB /* Assets.xcassets in Resources */,
+				86B2B6482A0DFEBA004914B3 /* PostTableViewCell.xib in Resources */,
 				86E56E862A0CAA7600BACFCB /* Main.storyboard in Resources */,
 				86B2B63B2A0DF8CA004914B3 /* PostListViewController.storyboard in Resources */,
 			);
@@ -208,9 +242,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86B2B64C2A0E18C7004914B3 /* NSDate+Helpers.m in Sources */,
 				86B2B6372A0DE6E2004914B3 /* Post.m in Sources */,
 				86E56E832A0CAA7600BACFCB /* PostListViewController.m in Sources */,
 				86B2B6402A0DFA20004914B3 /* AddPostViewController.m in Sources */,
+				86B2B6462A0DFEA5004914B3 /* PostTableViewCell.m in Sources */,
 				86E56E7D2A0CAA7600BACFCB /* AppDelegate.m in Sources */,
 				86E56E8E2A0CAA7700BACFCB /* main.m in Sources */,
 				86E56E802A0CAA7600BACFCB /* SceneDelegate.m in Sources */,
@@ -435,6 +471,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		86B2B64D2A0E30D5004914B3 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -442,6 +486,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 86B2B6312A0CB16A004914B3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		86B2B64E2A0E30D5004914B3 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86B2B64D2A0E30D5004914B3 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xId-LA-Us3">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -8,22 +8,57 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Post List View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="PostListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PostListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IHg-ew-vKw">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IHg-ew-vKw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="2xd-KA-Hia"/>
+                            <constraint firstItem="IHg-ew-vKw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="9Vj-7G-cZW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IHg-ew-vKw" secondAttribute="trailing" id="LSD-go-pp1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="IHg-ew-vKw" secondAttribute="bottom" id="SmM-Om-h3a"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="XTs-US-6og"/>
+                    <navigationItem key="navigationItem" id="6F9-6h-9yj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="postListTableView" destination="IHg-ew-vKw" id="ZrE-j8-msA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="-34"/>
+            <point key="canvasLocation" x="991.60305343511448" y="-34.507042253521128"/>
+        </scene>
+        <!--home-->
+        <scene sceneID="A2d-IF-ady">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xId-LA-Us3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="home" image="house" catalog="system" id="9Vr-w5-3Fe"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mUr-EU-rYo">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="2mt-lN-sRj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ogq-AF-Flv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.885496183206101" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>
