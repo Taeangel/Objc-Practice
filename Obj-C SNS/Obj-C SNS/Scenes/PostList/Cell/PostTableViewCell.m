@@ -21,12 +21,6 @@
     // Configure the view for the selected state
 }
 
-// MARK: reuse Identifier
-
-+ (NSString *)cellReuseIdentifier {
-  return  @"PostTableViewCell";
-}
-
 - (void)configureCell:(Post *)cellData {
   
   

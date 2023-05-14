@@ -9,6 +9,7 @@
 #import "Post.h"
 #import "PostTableViewCell.h"
 #import "Constant.h"
+#import "UITableViewCell+ReuseId.h"
 
 @import FirebaseCore;
 @import FirebaseFirestore;

@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #include "Post.h"
 #import "NSDate+Helpers.h"
+
 @import SDWebImage;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -24,7 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)configureCell: (Post *) cellData;
 
-+ (NSString *)cellReuseIdentifier;
 
 @end
 
