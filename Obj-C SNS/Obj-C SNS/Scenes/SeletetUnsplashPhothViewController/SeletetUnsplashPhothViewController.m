@@ -57,6 +57,17 @@
   
   if (_photoSelectionBlock == nil) { return; }
   
+  if (_selectedImgURLString == nil) {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"안내" message:@"이미지를 선택하세요" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+    [alert addAction:defaultAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    return; 
+  }
+  
   _photoSelectionBlock(_selectedImgURLString);
   
   [self dismissViewControllerAnimated:YES completion:nil];
