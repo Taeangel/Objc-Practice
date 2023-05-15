@@ -54,8 +54,6 @@
   UIAlertAction* noAction = [UIAlertAction actionWithTitle:@"아닙니다!" style: UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
   
   __weak DetailSNSViewController * weakSelf = self;
- 
-
   
   UIAlertAction* yesAction  = [UIAlertAction actionWithTitle:@"네 삭제하겠습니다!" style: UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
     DetailSNSViewController * strongSelf = weakSelf;

@@ -105,6 +105,8 @@
 
   detailViewController.interfacePost = cellData;
   
+  [_postListTableView deselectRowAtIndexPath:indexPath animated:TRUE];
+
   [self.navigationController pushViewController:detailViewController animated:TRUE];
 }
 

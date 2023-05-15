@@ -7,7 +7,9 @@
 
 #import "ModifySNSViewController.h"
 
-@interface ModifySNSViewController ()
+@interface ModifySNSViewController (){
+  Post * _post;
+}
 
 @end
 
@@ -15,6 +17,11 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+}
+
+- (void) initSetting {
+  _post = _interfacePost;
   
 }
 
