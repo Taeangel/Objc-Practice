@@ -7,25 +7,30 @@
 
 #import "DetailSNSViewController.h"
 
-@interface DetailSNSViewController ()
+@interface DetailSNSViewController () {
+  Post * _post;
+}
 
 @end
 
 @implementation DetailSNSViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
+  [self initSetting];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void) initSetting {
+  _post = _interfacePost;
+  self.navigationItem.title = _post.title;
 }
-*/
 
+- (IBAction)onDeleteBtnClicked:(id)sender {
+  
+}
+
+
+- (IBAction)onModifyPostBtnClicked:(id)sender {
+  
+}
 @end

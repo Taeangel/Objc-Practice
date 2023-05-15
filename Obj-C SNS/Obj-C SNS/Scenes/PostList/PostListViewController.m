@@ -94,9 +94,18 @@
 // MARK: TableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  
+  Post * cellData = [postList objectAtIndex:indexPath.row];
 
+  NSString * className = NSStringFromClass([DetailSNSViewController class]);
   
+  UIStoryboard * storyboard = [UIStoryboard storyboardWithName:className bundle:nil];
   
+  DetailSNSViewController * detailViewController = [storyboard instantiateViewControllerWithIdentifier:className];
+
+  detailViewController.interfacePost = cellData;
+  
+  [self.navigationController pushViewController:detailViewController animated:TRUE];
 }
 
 // MARK: 포스트 데이터

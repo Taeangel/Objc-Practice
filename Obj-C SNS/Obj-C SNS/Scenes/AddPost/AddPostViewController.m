@@ -62,6 +62,7 @@
   __weak AddPostViewController * weakSelf = self;
   
   SeletetUnsplashPhothViewController * selectPhotoVC = (SeletetUnsplashPhothViewController *) [SeletetUnsplashPhothViewController presentWithNavigationAndReturnVC:self];
+  
   selectPhotoVC.photoSelectionBlock = ^(NSString * selectedUrl) {
     NSLog(@"%s , line: %d, %@", __func__, __LINE__, selectedUrl);
     AddPostViewController * strongSelf = weakSelf;
