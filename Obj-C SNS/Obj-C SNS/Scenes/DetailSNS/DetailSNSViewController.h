@@ -9,6 +9,8 @@
 #import "Post.h"
 #import "NSDate+Helpers.h"
 #import "ModifySNSViewController.h"
+#import "Constant.h"
+
 
 @import FirebaseCore;
 @import FirebaseFirestore;

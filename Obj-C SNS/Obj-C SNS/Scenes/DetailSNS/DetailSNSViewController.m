@@ -109,6 +109,7 @@
     UIAlertAction* alertAction = [UIAlertAction actionWithTitle:@"확인" style: UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
    
     [alert addAction: alertAction];
+    [[NSNotificationCenter defaultCenter]postNotificationName:PostListVCShouldFetchListNotification object:self];
 
     [self presentViewController:alert animated:YES completion:nil];
 
