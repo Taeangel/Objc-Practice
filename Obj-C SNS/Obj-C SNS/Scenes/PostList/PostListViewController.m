@@ -142,15 +142,5 @@
   }];
 }
 
--(void) deletePost: (NSString *) postIdentifier {
-  FIRDocumentReference * postDeleteRef = [self.db collectionWithPath: postIdentifier];
-  
-  [ postDeleteRef deleteDocumentWithCompletion:^(NSError * _Nullable error) {
-    if (error != nil) {
-      NSLog(@"Error removing document: %@", error);
-    } else {
-      NSLog(@"Document successfully removed!");
-    }
-  }];
-}
+
 @end

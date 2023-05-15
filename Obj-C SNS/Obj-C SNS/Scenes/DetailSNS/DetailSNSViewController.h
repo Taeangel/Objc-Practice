@@ -8,7 +8,10 @@
 #import <UIKit/UIKit.h>
 #import "Post.h"
 #import "NSDate+Helpers.h"
+#import "ModifySNSViewController.h"
 
+@import FirebaseCore;
+@import FirebaseFirestore;
 
 NS_ASSUME_NONNULL_BEGIN
 

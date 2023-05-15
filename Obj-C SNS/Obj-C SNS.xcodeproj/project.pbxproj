@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		863B0E5F2A125F9F0025C74B /* ModifySNSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 863B0E5E2A125F9F0025C74B /* ModifySNSViewController.m */; };
+		863B0E612A125FAA0025C74B /* ModifySNSViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863B0E602A125FAA0025C74B /* ModifySNSViewController.storyboard */; };
 		86B2B6302A0CACDE004914B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B62F2A0CACDE004914B3 /* GoogleService-Info.plist */; };
 		86B2B6332A0CB16A004914B3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 86B2B6322A0CB16A004914B3 /* FirebaseFirestore */; };
 		86B2B6372A0DE6E2004914B3 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6362A0DE6E2004914B3 /* Post.m */; };
@@ -43,6 +45,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		863B0E5D2A125F9F0025C74B /* ModifySNSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifySNSViewController.h; sourceTree = "<group>"; };
+		863B0E5E2A125F9F0025C74B /* ModifySNSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifySNSViewController.m; sourceTree = "<group>"; };
+		863B0E602A125FAA0025C74B /* ModifySNSViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifySNSViewController.storyboard; sourceTree = "<group>"; };
 		86B2B62F2A0CACDE004914B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		86B2B6352A0DE6E2004914B3 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		86B2B6362A0DE6E2004914B3 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
@@ -111,6 +116,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		863B0E5C2A125F740025C74B /* ModifySNS */ = {
+			isa = PBXGroup;
+			children = (
+				863B0E5D2A125F9F0025C74B /* ModifySNSViewController.h */,
+				863B0E5E2A125F9F0025C74B /* ModifySNSViewController.m */,
+				863B0E602A125FAA0025C74B /* ModifySNSViewController.storyboard */,
+			);
+			path = ModifySNS;
+			sourceTree = "<group>";
+		};
 		86B2B6342A0DE6C6004914B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +144,7 @@
 				86B2B63D2A0DF9F7004914B3 /* AddPost */,
 				86B2B63C2A0DF9E7004914B3 /* PostList */,
 				86B2B67B2A121CC0004914B3 /* DetailSNS */,
+				863B0E5C2A125F740025C74B /* ModifySNS */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -232,9 +248,9 @@
 		86B2B67B2A121CC0004914B3 /* DetailSNS */ = {
 			isa = PBXGroup;
 			children = (
-				86B2B67F2A121CFC004914B3 /* DetailSNSViewController.storyboard */,
 				86B2B67C2A121CE6004914B3 /* DetailSNSViewController.h */,
 				86B2B67D2A121CE6004914B3 /* DetailSNSViewController.m */,
+				86B2B67F2A121CFC004914B3 /* DetailSNSViewController.storyboard */,
 			);
 			path = DetailSNS;
 			sourceTree = "<group>";
@@ -348,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86B2B6422A0DFA30004914B3 /* AddPostViewController.storyboard in Resources */,
+				863B0E612A125FAA0025C74B /* ModifySNSViewController.storyboard in Resources */,
 				86E56E8B2A0CAA7700BACFCB /* LaunchScreen.storyboard in Resources */,
 				86B2B6602A0E8AFF004914B3 /* SeletetUnsplashPhothViewController.storyboard in Resources */,
 				86B2B6712A0F6D50004914B3 /* PhotoCollectionViewCell.xib in Resources */,
@@ -370,6 +387,7 @@
 				86B2B6842A121EF9004914B3 /* UIViewController+viewTransition.m in Sources */,
 				86B2B64C2A0E18C7004914B3 /* NSDate+Helpers.m in Sources */,
 				86B2B6372A0DE6E2004914B3 /* Post.m in Sources */,
+				863B0E5F2A125F9F0025C74B /* ModifySNSViewController.m in Sources */,
 				86B2B6542A0E3760004914B3 /* MainTabBarController.m in Sources */,
 				86B2B6572A0E559B004914B3 /* UIViewController+Popup.m in Sources */,
 				86E56E832A0CAA7600BACFCB /* PostListViewController.m in Sources */,
