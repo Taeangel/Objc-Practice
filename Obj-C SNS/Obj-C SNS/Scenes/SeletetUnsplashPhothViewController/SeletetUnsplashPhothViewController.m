@@ -11,6 +11,7 @@
 {
   NSNumber * _currentPage;
   NSMutableArray<USPhoto*>* _photoList ;
+  NSString *  _selectedImgURLString;
 }
 
 @property (weak, nonatomic) IBOutlet UISearchBar *photoSearchBar;
@@ -54,7 +55,12 @@
 - (IBAction)onChooseFinished:(id)sender {
   NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"");
   
+  if (_photoSelectionBlock == nil) { return; }
+  
+  _photoSelectionBlock(_selectedImgURLString);
+  
   [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 
@@ -157,9 +163,21 @@
   
   PhotoCollectionViewCell* cell = (PhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:PhotoCollectionViewCell.cellReuseIdentifier forIndexPath:indexPath];
   
-  [cell configureCell:cellData];
+  [cell configureCell:cellData selected:_selectedImgURLString];
   
   return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+  
+  if ([_selectedImgURLString isEqualToString:_photoList[indexPath.item].urls.regular]) {
+    _selectedImgURLString = nil;
+  } else {
+    _selectedImgURLString = _photoList[indexPath.item].urls.regular;
+  }
+  
+  [collectionView reloadData];
+  
 }
 
 // MARK: FlowLayout

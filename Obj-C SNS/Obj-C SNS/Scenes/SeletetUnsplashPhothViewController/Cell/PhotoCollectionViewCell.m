@@ -22,16 +22,23 @@
 }
 
 
-- (void) configureCell:(USPhoto *) cellData {
-  
+- (void) configureCell:(USPhoto *) cellData selected: (NSString *) selectedImgUrlString {
   NSLog(@"%s , line: %d, %@", __func__, __LINE__, cellData.idenditfier);
-
   
-//  UIImage * placeholderImg = [UIImage systemImageNamed: @"photo.artframe"];
+  _cellData = cellData;
   
   NSURL * imgUrl = [[NSURL alloc] initWithString:  cellData.urls.regular];
-  
+    
   [_photoImageView sd_setImageWithURL:imgUrl];
+  
+  BOOL isHidden = ![self isSelectedImage:selectedImgUrlString];
+  
+  [_checkImageView setHidden: isHidden];
+
+}
+
+-(BOOL)isSelectedImage: (NSString *) selectedImgUrlString {
+  return  [selectedImgUrlString isEqualToString: _cellData.urls.regular];
 }
 
 @end

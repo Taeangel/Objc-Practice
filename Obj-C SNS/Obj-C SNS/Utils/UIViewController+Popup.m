@@ -37,4 +37,22 @@
   
   [caller presentViewController:navController animated:YES completion:nil];
 }
+
++ (id)presentWithNavigationAndReturnVC:(UIViewController *)caller {
+  
+  NSString * className = NSStringFromClass([self class]);
+  
+  UIStoryboard * storyboard = [UIStoryboard storyboardWithName:className bundle:nil];
+  
+  UIViewController * popVc = [storyboard instantiateViewControllerWithIdentifier:className];
+  
+  UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:popVc];
+  
+  
+  [navController setModalPresentationStyle: UIModalPresentationFullScreen];
+  
+  [caller presentViewController:navController animated:YES completion:nil];
+  
+  return popVc;
+}
 @end

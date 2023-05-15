@@ -22,6 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   _db = [FIRFirestore firestore];
+  
+  _postImageView.sd_imageTransition = SDWebImageTransition.fadeTransition;
+  _postImageView.sd_imageIndicator = SDWebImageProgressIndicator.defaultIndicator;
+  _postImageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 // MARK: IBActions
@@ -52,7 +56,18 @@
 - (IBAction)onPhotoSelectBtnClicked:(UIButton *)sender {
   NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"사진선택 클릭");
   
-  [SeletetUnsplashPhothViewController presentWithNavigation:self];
+  __weak AddPostViewController * weakSelf = self;
+
+ SeletetUnsplashPhothViewController * selectPhotoVC = (SeletetUnsplashPhothViewController *) [SeletetUnsplashPhothViewController presentWithNavigationAndReturnVC:self];
+  selectPhotoVC.photoSelectionBlock = ^(NSString * selectedUrl) {
+    NSLog(@"%s , line: %d, %@", __func__, __LINE__, selectedUrl);
+    AddPostViewController * strongSelf = weakSelf;
+    if (strongSelf) {
+      NSURL * imgUrl = [[NSURL alloc] initWithString: selectedUrl];
+      
+      [strongSelf->_postImageView sd_setImageWithURL:imgUrl];
+    }
+  };
 }
 
 // MARK: 인스턴스 메서드
@@ -77,14 +92,8 @@
     if (error != nil) {
       NSLog(@"Error getting document: %@", error);
     } else {
-//      NSLog(@"포스팅 추가 성공 - refId: %@", newPostRef.documentID);
       
       [[NSNotificationCenter defaultCenter]postNotificationName:PostListVCShouldFetchListNotification object:self];
-      
-      
-      
-      
-      
       completion();
     } 
   }];

@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SeletetUnsplashPhothViewController : UIViewController<UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
+@property (nonatomic, nullable, copy) void(^photoSelectionBlock)(NSString *);
+
 @end
 
 NS_ASSUME_NONNULL_END
