@@ -13,6 +13,8 @@
     [super awakeFromNib];
     // Initialization code
   NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"어웨이크 프럼닙");
+  _postImageView.contentMode = UIViewContentModeScaleAspectFill;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -27,8 +29,8 @@
   [_postImageView sd_setImageWithURL:[NSURL URLWithString:cellData.image]
                placeholderImage:[UIImage systemImageNamed:@"photo.artframe"]];
   
-  NSString * idString = [@"id: " stringByAppendingString:cellData.identifier];
-  [_identifier setText:idString];
+//  NSString * idString = [@"id: " stringByAppendingString:cellData.identifier];
+//  [_identifier setText:idString];
   
   NSString * titleString = [@"title: " stringByAppendingString:cellData.title];
   [_title setText:titleString];

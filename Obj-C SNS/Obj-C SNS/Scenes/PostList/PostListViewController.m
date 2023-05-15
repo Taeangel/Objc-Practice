@@ -10,7 +10,6 @@
 @interface PostListViewController ()
 {
   NSMutableArray<Post *> * postList;
-  
 }
 
 @property (weak, nonatomic, nullable) FIRFirestore * db;
@@ -78,7 +77,6 @@
   }
 }
 
-
 // MARK: 테이블뷰 데이터소스
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -95,29 +93,19 @@
 }
 // MARK: 포스트 데이터
 
-
 -(void) fetchPosts:(void(^)(NSMutableArray<Post *> *)) completion{
   
   __weak PostListViewController * weakSelf = self;
   
   [[[self.db collectionWithPath:@"posts"] queryOrderedByField:@"created_at" descending:YES]
    getDocumentsWithCompletion:^(FIRQuerySnapshot *snapshot, NSError *error) {
-    
     NSMutableArray<Post *> * tempPostList = [[NSMutableArray alloc] init];
-    
     
     if (error != nil) {
       NSLog(@"Error getting documents: %@", error);
     } else {
       tempPostList = [Post fromFIRQureySnapshot:snapshot];
       completion(tempPostList);
-      //      PostListViewController * strongSelf = weakSelf;
-      //
-      //      if (strongSelf) {
-      //        strongSelf->postList = [Post fromFIRQureySnapshot:snapshot];
-      //      }
-      
-      
     }
   }];
 }

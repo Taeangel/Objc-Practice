@@ -103,7 +103,6 @@
       strongSelf->_currentPage = [NSNumber numberWithInt: 1];
       
       [self searchPhotoApiCall:searchText withPage: strongSelf->_currentPage withCompletion:^(USPhotoSearchResponse* response) {
-        NSLog(@"%s , line: %d, %d", __func__, __LINE__, response.result.count);
         strongSelf->_photoList = response.result;
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -165,12 +164,6 @@
   }];
   
   [dataTask resume];
-  
-  
-  
-//https://api.unsplash.com/search/photos?page=1&query=office
-  NSURLSession* session = [NSURLSession sessionWithConfiguration:config];
-   
 }
 
 // MARK: UICollectionView
