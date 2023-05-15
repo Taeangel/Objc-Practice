@@ -12,6 +12,8 @@
   NSNumber * _currentPage;
   NSMutableArray<USPhoto*>* _photoList ;
   NSString *  _selectedImgURLString;
+  NSString * _currentSearchTerm;
+  BOOL _isLoding;
 }
 
 @property (weak, nonatomic) IBOutlet UISearchBar *photoSearchBar;
@@ -27,6 +29,8 @@
     [super viewDidLoad];
     
   _currentPage = [[NSNumber alloc] initWithInt: 1];
+  _currentSearchTerm = @"";
+  _isLoding = NO;
   
   [self initialSettion];
 }
@@ -65,19 +69,19 @@
     
     [self presentViewController:alert animated:YES completion:nil];
     
-    return; 
+    return;
   }
   
   _photoSelectionBlock(_selectedImgURLString);
   
   [self dismissViewControllerAnimated:YES completion:nil];
-
 }
 
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
 //  NSLog(@"%s , line: %d, %@", __func__, __LINE__, searchText);
   
+  _currentSearchTerm = searchText;
   
   //글자 입력시 디바운스 작업 초기화
   if (_debounceSearchInputTask != nil) {
@@ -89,15 +93,15 @@
     return;
   }
   
-  
   __weak SeletetUnsplashPhothViewController * weakSelf = self;
   
-  
   dispatch_block_t task = dispatch_block_create_with_qos_class(DISPATCH_BLOCK_ENFORCE_QOS_CLASS, QOS_CLASS_USER_INITIATED, 0, ^{
-    NSLog(@"%s , line: %d,디바운스된 글자 %@", __func__, __LINE__, searchText);
-    
+
     SeletetUnsplashPhothViewController * strongSelf = weakSelf;
+    
     if (strongSelf) {
+      strongSelf->_currentPage = [NSNumber numberWithInt: 1];
+      
       [self searchPhotoApiCall:searchText withPage: strongSelf->_currentPage withCompletion:^(USPhotoSearchResponse* response) {
         NSLog(@"%s , line: %d, %d", __func__, __LINE__, response.result.count);
         strongSelf->_photoList = response.result;
@@ -119,6 +123,7 @@
                    withPage: (NSNumber * ) page
              withCompletion: (void(^)(USPhotoSearchResponse *)) completion
 {
+    
   NSURLSessionConfiguration * config = [NSURLSessionConfiguration defaultSessionConfiguration];
   
   NSURLSession* sesson = [NSURLSession sessionWithConfiguration:config];
@@ -127,8 +132,15 @@
   [components setScheme: @"https"];
   [components setHost: @"api.unsplash.com"];
   [components setPath: @"/search/photos"];
-  [components setQuery: [@"page=" stringByAppendingString:[page stringValue]]];
-  [components setQuery: [@"query=" stringByAppendingString:searchTerm]];
+  
+  NSMutableArray<NSURLQueryItem *> * quries = [NSMutableArray arrayWithCapacity:2];
+  
+  NSString * pageString = [@([page integerValue]) stringValue];
+  
+  [quries addObject: [NSURLQueryItem queryItemWithName:@"page" value:pageString]];
+  [quries addObject: [NSURLQueryItem queryItemWithName:@"query" value:searchTerm]];
+  
+  [components setQueryItems:quries];
   
   NSURL* url = [components URL];
   
@@ -188,7 +200,36 @@
   }
   
   [collectionView reloadData];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
   
+  if ([scrollView reachedBottom]) {
+
+    if (_isLoding) {
+      return;
+    }
+    
+    _isLoding = YES;
+
+    __weak SeletetUnsplashPhothViewController * weakSelf = self;
+   
+    _currentPage = [NSNumber numberWithInt:[_currentPage integerValue] + 1];
+    [self searchPhotoApiCall:_currentSearchTerm
+                    withPage:_currentPage
+              withCompletion:^(USPhotoSearchResponse *  response) {
+      
+      SeletetUnsplashPhothViewController * strongSelf = weakSelf;
+      if (strongSelf) {
+        [strongSelf->_photoList addObjectsFromArray:response.result];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+          [strongSelf->_photoListCollectionView reloadData];
+          strongSelf->_isLoding = NO;
+        });
+      }
+    }];
+  }
 }
 
 // MARK: FlowLayout

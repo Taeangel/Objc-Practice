@@ -29,6 +29,7 @@
 		86B2B6712A0F6D50004914B3 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B6702A0F6D50004914B3 /* PhotoCollectionViewCell.xib */; };
 		86B2B6742A0F70CC004914B3 /* UICollectionViewCell+ReuseId.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6732A0F70CC004914B3 /* UICollectionViewCell+ReuseId.m */; };
 		86B2B6772A0F72EE004914B3 /* UITableViewCell+ReuseId.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6762A0F72EE004914B3 /* UITableViewCell+ReuseId.m */; };
+		86B2B67A2A11E641004914B3 /* UIScrollView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6792A11E641004914B3 /* UIScrollView+Helpers.m */; };
 		86E56E7D2A0CAA7600BACFCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */; };
 		86E56E802A0CAA7600BACFCB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E7F2A0CAA7600BACFCB /* SceneDelegate.m */; };
 		86E56E832A0CAA7600BACFCB /* PostListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E822A0CAA7600BACFCB /* PostListViewController.m */; };
@@ -73,6 +74,8 @@
 		86B2B6732A0F70CC004914B3 /* UICollectionViewCell+ReuseId.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+ReuseId.m"; sourceTree = "<group>"; };
 		86B2B6752A0F72EE004914B3 /* UITableViewCell+ReuseId.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+ReuseId.h"; sourceTree = "<group>"; };
 		86B2B6762A0F72EE004914B3 /* UITableViewCell+ReuseId.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+ReuseId.m"; sourceTree = "<group>"; };
+		86B2B6782A11E641004914B3 /* UIScrollView+Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Helpers.h"; sourceTree = "<group>"; };
+		86B2B6792A11E641004914B3 /* UIScrollView+Helpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Helpers.m"; sourceTree = "<group>"; };
 		86E56E782A0CAA7600BACFCB /* Obj-C SNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Obj-C SNS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E56E7B2A0CAA7600BACFCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 			children = (
 				86B2B64A2A0E18C7004914B3 /* NSDate+Helpers.h */,
 				86B2B64B2A0E18C7004914B3 /* NSDate+Helpers.m */,
+				86B2B6782A11E641004914B3 /* UIScrollView+Helpers.h */,
+				86B2B6792A11E641004914B3 /* UIScrollView+Helpers.m */,
 				86B2B6552A0E559B004914B3 /* UIViewController+Popup.h */,
 				86B2B6562A0E559B004914B3 /* UIViewController+Popup.m */,
 				86B2B65A2A0E641F004914B3 /* Constant.h */,
@@ -348,6 +353,7 @@
 				86B2B66B2A0F55A9004914B3 /* USPhoto.m in Sources */,
 				86E56E7D2A0CAA7600BACFCB /* AppDelegate.m in Sources */,
 				86B2B6772A0F72EE004914B3 /* UITableViewCell+ReuseId.m in Sources */,
+				86B2B67A2A11E641004914B3 /* UIScrollView+Helpers.m in Sources */,
 				86E56E8E2A0CAA7700BACFCB /* main.m in Sources */,
 				86E56E802A0CAA7600BACFCB /* SceneDelegate.m in Sources */,
 			);

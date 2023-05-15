@@ -9,6 +9,7 @@
 #import "USPhotoSearchResponse.h"
 #import "PhotoCollectionViewCell.h"
 #import "UICollectionViewCell+ReuseId.h"
+#import "UIScrollView+Helpers.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
