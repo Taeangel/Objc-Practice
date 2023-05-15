@@ -21,7 +21,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view.
   
   [self initialSettion];
   
@@ -53,6 +52,7 @@
   NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"");
   self.db = [FIRFirestore firestore];
   self.postListTableView.dataSource = self;
+  self.postListTableView.delegate = self;
   
   UINib * postCellNib = [UINib nibWithNibName:@"PostTableViewCell" bundle:nil];
   
@@ -89,13 +89,19 @@
   PostTableViewCell * cell = (PostTableViewCell *)[tableView dequeueReusableCellWithIdentifier: PostTableViewCell.cellReuseIdentifier forIndexPath:indexPath];
   [cell configureCell:cellData];
   return cell;
+}
+
+// MARK: TableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+  
   
 }
+
 // MARK: 포스트 데이터
 
 -(void) fetchPosts:(void(^)(NSMutableArray<Post *> *)) completion{
-  
-  __weak PostListViewController * weakSelf = self;
   
   [[[self.db collectionWithPath:@"posts"] queryOrderedByField:@"created_at" descending:YES]
    getDocumentsWithCompletion:^(FIRQuerySnapshot *snapshot, NSError *error) {
@@ -128,7 +134,6 @@
 }
 
 -(void) deletePost: (NSString *) postIdentifier {
-  //  이렇게 해도 되고
   FIRDocumentReference * postDeleteRef = [self.db collectionWithPath: postIdentifier];
   
   [ postDeleteRef deleteDocumentWithCompletion:^(NSError * _Nullable error) {
@@ -138,15 +143,5 @@
       NSLog(@"Document successfully removed!");
     }
   }];
-  //  이렇게 해도 되고
-  
-  //  [[[self.db collectionWithPath:@"posts"] documentWithPath:@"U2ruHtluYgLD4VwivQJO"]
-  //      deleteDocumentWithCompletion:^(NSError * _Nullable error) {
-  //        if (error != nil) {
-  //          NSLog(@"Error removing document: %@", error);
-  //        } else {
-  //          NSLog(@"Document successfully removed!");
-  //        }
-  //  }];
 }
 @end

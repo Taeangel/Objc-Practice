@@ -14,7 +14,7 @@
 @import FirebaseCore;
 @import FirebaseFirestore;
 
-@interface PostListViewController : UIViewController <UITableViewDataSource>
+@interface PostListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 
 @end

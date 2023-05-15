@@ -30,6 +30,8 @@
 		86B2B6742A0F70CC004914B3 /* UICollectionViewCell+ReuseId.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6732A0F70CC004914B3 /* UICollectionViewCell+ReuseId.m */; };
 		86B2B6772A0F72EE004914B3 /* UITableViewCell+ReuseId.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6762A0F72EE004914B3 /* UITableViewCell+ReuseId.m */; };
 		86B2B67A2A11E641004914B3 /* UIScrollView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6792A11E641004914B3 /* UIScrollView+Helpers.m */; };
+		86B2B67E2A121CE6004914B3 /* DetailSNSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B67D2A121CE6004914B3 /* DetailSNSViewController.m */; };
+		86B2B6802A121CFC004914B3 /* DetailSNSViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B67F2A121CFC004914B3 /* DetailSNSViewController.storyboard */; };
 		86E56E7D2A0CAA7600BACFCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */; };
 		86E56E802A0CAA7600BACFCB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E7F2A0CAA7600BACFCB /* SceneDelegate.m */; };
 		86E56E832A0CAA7600BACFCB /* PostListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E822A0CAA7600BACFCB /* PostListViewController.m */; };
@@ -76,6 +78,9 @@
 		86B2B6762A0F72EE004914B3 /* UITableViewCell+ReuseId.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+ReuseId.m"; sourceTree = "<group>"; };
 		86B2B6782A11E641004914B3 /* UIScrollView+Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Helpers.h"; sourceTree = "<group>"; };
 		86B2B6792A11E641004914B3 /* UIScrollView+Helpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Helpers.m"; sourceTree = "<group>"; };
+		86B2B67C2A121CE6004914B3 /* DetailSNSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailSNSViewController.h; sourceTree = "<group>"; };
+		86B2B67D2A121CE6004914B3 /* DetailSNSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailSNSViewController.m; sourceTree = "<group>"; };
+		86B2B67F2A121CFC004914B3 /* DetailSNSViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailSNSViewController.storyboard; sourceTree = "<group>"; };
 		86E56E782A0CAA7600BACFCB /* Obj-C SNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Obj-C SNS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E56E7B2A0CAA7600BACFCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -120,6 +125,7 @@
 				86B2B6512A0E3732004914B3 /* MainTab */,
 				86B2B63D2A0DF9F7004914B3 /* AddPost */,
 				86B2B63C2A0DF9E7004914B3 /* PostList */,
+				86B2B67B2A121CC0004914B3 /* DetailSNS */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -179,6 +185,7 @@
 			children = (
 				86B2B6522A0E3760004914B3 /* MainTabBarController.h */,
 				86B2B6532A0E3760004914B3 /* MainTabBarController.m */,
+				86E56E842A0CAA7600BACFCB /* Main.storyboard */,
 			);
 			path = MainTab;
 			sourceTree = "<group>";
@@ -217,6 +224,27 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		86B2B67B2A121CC0004914B3 /* DetailSNS */ = {
+			isa = PBXGroup;
+			children = (
+				86B2B67C2A121CE6004914B3 /* DetailSNSViewController.h */,
+				86B2B67F2A121CFC004914B3 /* DetailSNSViewController.storyboard */,
+				86B2B67D2A121CE6004914B3 /* DetailSNSViewController.m */,
+			);
+			path = DetailSNS;
+			sourceTree = "<group>";
+		};
+		86B2B6812A121D49004914B3 /* AppSceneDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */,
+				86E56E7B2A0CAA7600BACFCB /* AppDelegate.h */,
+				86E56E7F2A0CAA7600BACFCB /* SceneDelegate.m */,
+				86E56E7E2A0CAA7600BACFCB /* SceneDelegate.h */,
+			);
+			path = AppSceneDelegate;
+			sourceTree = "<group>";
+		};
 		86E56E6F2A0CAA7600BACFCB = {
 			isa = PBXGroup;
 			children = (
@@ -238,12 +266,8 @@
 			children = (
 				86B2B6492A0E18A2004914B3 /* Utils */,
 				86B2B6342A0DE6C6004914B3 /* Models */,
-				86E56E7B2A0CAA7600BACFCB /* AppDelegate.h */,
 				86B2B6382A0DF89A004914B3 /* Scenes */,
-				86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */,
-				86E56E7E2A0CAA7600BACFCB /* SceneDelegate.h */,
-				86E56E7F2A0CAA7600BACFCB /* SceneDelegate.m */,
-				86E56E842A0CAA7600BACFCB /* Main.storyboard */,
+				86B2B6812A121D49004914B3 /* AppSceneDelegate */,
 				86E56E872A0CAA7700BACFCB /* Assets.xcassets */,
 				86E56E892A0CAA7700BACFCB /* LaunchScreen.storyboard */,
 				86E56E8C2A0CAA7700BACFCB /* Info.plist */,
@@ -325,6 +349,7 @@
 				86B2B6302A0CACDE004914B3 /* GoogleService-Info.plist in Resources */,
 				86E56E882A0CAA7700BACFCB /* Assets.xcassets in Resources */,
 				86B2B6482A0DFEBA004914B3 /* PostTableViewCell.xib in Resources */,
+				86B2B6802A121CFC004914B3 /* DetailSNSViewController.storyboard in Resources */,
 				86E56E862A0CAA7600BACFCB /* Main.storyboard in Resources */,
 				86B2B63B2A0DF8CA004914B3 /* PostListViewController.storyboard in Resources */,
 			);
@@ -355,6 +380,7 @@
 				86B2B6772A0F72EE004914B3 /* UITableViewCell+ReuseId.m in Sources */,
 				86B2B67A2A11E641004914B3 /* UIScrollView+Helpers.m in Sources */,
 				86E56E8E2A0CAA7700BACFCB /* main.m in Sources */,
+				86B2B67E2A121CE6004914B3 /* DetailSNSViewController.m in Sources */,
 				86E56E802A0CAA7600BACFCB /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,26 +11,23 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
-  NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"어웨이크 프럼닙");
+  [self initSetting];
+}
+
+- (void)initSetting {
   _postImageView.contentMode = UIViewContentModeScaleAspectFill;
-
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
+//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+//    [super setSelected:selected animated:animated];
+//  
+//  NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"눌리나!!");
+//}
 
 - (void)configureCell:(Post *)cellData {
   
-  
   [_postImageView sd_setImageWithURL:[NSURL URLWithString:cellData.image]
                placeholderImage:[UIImage systemImageNamed:@"photo.artframe"]];
-  
-//  NSString * idString = [@"id: " stringByAppendingString:cellData.identifier];
-//  [_identifier setText:idString];
   
   NSString * titleString = [@"title: " stringByAppendingString:cellData.title];
   [_title setText:titleString];
