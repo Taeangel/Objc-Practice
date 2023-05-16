@@ -126,6 +126,15 @@
 			path = ModifySNS;
 			sourceTree = "<group>";
 		};
+		8650EA412A13BE0B00864A86 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				86B2B65A2A0E641F004914B3 /* Constant.h */,
+				86B2B6582A0E6404004914B3 /* Constants.m */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		86B2B6342A0DE6C6004914B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,8 +200,7 @@
 				86B2B6562A0E559B004914B3 /* UIViewController+Popup.m */,
 				86B2B6822A121EF9004914B3 /* UIViewController+viewTransition.h */,
 				86B2B6832A121EF9004914B3 /* UIViewController+viewTransition.m */,
-				86B2B65A2A0E641F004914B3 /* Constant.h */,
-				86B2B6582A0E6404004914B3 /* Constants.m */,
+				8650EA412A13BE0B00864A86 /* Constant */,
 				86B2B6752A0F72EE004914B3 /* UITableViewCell+ReuseId.h */,
 				86B2B6762A0F72EE004914B3 /* UITableViewCell+ReuseId.m */,
 				86B2B6722A0F70CC004914B3 /* UICollectionViewCell+ReuseId.h */,

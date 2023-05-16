@@ -25,11 +25,30 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
   [self initSetting];
 }
+
+
 - (IBAction)onModifyBtnClicked:(id)sender {
-  [self editPost];
+  
+  
+  NSString * message = @"정말로 수정하시겠습니까?";
+    
+  UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle: UIAlertControllerStyleActionSheet];
+  
+  UIAlertAction* noAction = [UIAlertAction actionWithTitle:@"아닙니다!" style: UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+  
+  __weak ModifySNSViewController * weakSelf = self;
+  
+  UIAlertAction* yesAction  = [UIAlertAction actionWithTitle:@"네 수정하겠습니다!" style: UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
+    [self editPost];
+    [self.navigationController popViewControllerAnimated:TRUE];
+  }];
+  
+  [alert addAction:noAction];
+  [alert addAction:yesAction];
+
+  [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void) initSetting {
@@ -56,12 +75,15 @@
   FIRDocumentReference * postUpdateRef = [[_db collectionWithPath:@"posts"] documentWithPath:_post.identifier];
   
   [postUpdateRef updateData: updatedPostDictionary completion:^(NSError * _Nullable error) {
-    NSLog(@"%s , line: %d, %@", __func__, __LINE__, error.description);
     if (error != nil) {
       NSLog(@"Error updating document: %@", error);
     } else {
       NSLog(@"Document successfully updated");
     }
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:PostListVCShouldFetchListNotification object:self];
+    [[NSNotificationCenter defaultCenter]postNotificationName:EditPostNotification object:self];
+
   }];
 }
 
@@ -85,7 +107,8 @@
 
 -(void) setTapGesture {
   UITapGestureRecognizer * tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
-  [_postContentTextField addGestureRecognizer: tapGestureRecognizer];
+  [_postImageView addGestureRecognizer: tapGestureRecognizer];
+  
   tapGestureRecognizer.delegate = self;
 }
 

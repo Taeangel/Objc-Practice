@@ -44,7 +44,6 @@
   
   for (FIRDocumentSnapshot *document in snapshot.documents) {
     
-    
     Post * postItem = [[Post alloc] initWithSnapshot:document];
     [postList addObject:postItem];
   }

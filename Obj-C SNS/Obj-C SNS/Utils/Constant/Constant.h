@@ -11,6 +11,7 @@
 // MARK: notification names
 
 FOUNDATION_EXPORT NSString * const PostListVCShouldFetchListNotification;
+FOUNDATION_EXPORT NSString * const EditPostNotification;
 
 
 #endif /* Constant_h */

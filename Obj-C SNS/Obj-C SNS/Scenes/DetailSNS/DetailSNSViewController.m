@@ -25,8 +25,23 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  self.db = [FIRFirestore firestore];
+
   [self initSetting];
+  
+  [[NSNotificationCenter defaultCenter]
+   addObserver: self
+   selector: @selector(handleNotification:)
+   name:EditPostNotification object:nil];
 }
+
+- (void)dealloc {
+  [[NSNotificationCenter defaultCenter]
+   removeObserver:self
+   name:EditPostNotification
+   object:nil];
+}
+
 
 -(void) initSetting {
   _post = _interfacePost;
@@ -39,10 +54,9 @@
   _postContent.text = [@"content: " stringByAppendingString: _post.content];
   _postCreatedAt.text = [@"createdAt: " stringByAppendingString: [_post.createdAt toString]];
   
-  self.navigationItem.title = _post.title;
+  self.navigationItem.title = @"계시물";
   
-  self.db = [FIRFirestore firestore];
-
+  self.db = [FIRFirestore firestore]; 
 }
 
 - (IBAction)onDeleteBtnClicked:(id)sender {
@@ -109,10 +123,25 @@
       [[NSNotificationCenter defaultCenter]postNotificationName:PostListVCShouldFetchListNotification object:self];
 
       [self presentViewController:alert animated:YES completion:nil];
-
   }];
-  
 }
 
+- (void) handleNotification:(NSNotification *) notification {
+  
+  if ([[notification name] isEqualToString:EditPostNotification]) {
+    __weak DetailSNSViewController * weakSelf = self;
+
+    FIRDocumentReference *docRef = [[_db collectionWithPath:@"posts"] documentWithPath:_post.identifier];
+    [docRef getDocumentWithCompletion:^(FIRDocumentSnapshot *snapshot, NSError *error) {
+      Post * post = [[Post alloc] initWithSnapshot:snapshot];
+      DetailSNSViewController * strongSelf = weakSelf;
+
+      if (strongSelf) {
+        strongSelf->_postTitle.text = post.title;
+        strongSelf->_postContent.text = post.content;
+      }
+    }];
+  }
+}
 
 @end
