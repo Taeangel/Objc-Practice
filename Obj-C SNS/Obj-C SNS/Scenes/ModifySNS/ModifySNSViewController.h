@@ -7,10 +7,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
+#import "SeletetUnsplashPhothViewController.h"
+#import "UIViewController+Popup.h"
+
+@import FirebaseCore;
+@import FirebaseFirestore;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ModifySNSViewController : UIViewController
+@interface ModifySNSViewController : UIViewController<UIGestureRecognizerDelegate>
 
 @property Post * interfacePost;
 

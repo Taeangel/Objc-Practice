@@ -77,41 +77,41 @@
 - (IBAction)onModifyPostBtnClicked:(id)sender {
   
   NSString * className = NSStringFromClass([ModifySNSViewController class]);
-  
+
   UIStoryboard * storyboard = [UIStoryboard storyboardWithName:className bundle:nil];
-  
+
   ModifySNSViewController * modifyViewController = [storyboard instantiateViewControllerWithIdentifier:className];
 
   modifyViewController.interfacePost = _post;
-  
-  [self.navigationController pushViewController: modifyViewController animated:TRUE];
 
+  [self.navigationController pushViewController: modifyViewController animated:TRUE];
 }
 
 -(void) deletePost: (NSString *) postIdentifier {
   
+  FIRDocumentReference * postUpdateRef = [[_db collectionWithPath:@"posts"] documentWithPath:_post.identifier];
   
-  [[[self.db collectionWithPath:@"posts"] documentWithPath:postIdentifier]
-      deleteDocumentWithCompletion:^(NSError * _Nullable error) {
-    
-   NSString * message = @"";
-    
-        if (error != nil) {
-          message = @"삭제에 실패했습니다 ㅠㅠ";
-        } else {
-          message = @"삭제에 성공했습니다!";
-        }
-    
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle: UIAlertControllerStyleAlert];
-    
-    UIAlertAction* alertAction = [UIAlertAction actionWithTitle:@"확인" style: UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
-   
-    [alert addAction: alertAction];
-    [[NSNotificationCenter defaultCenter]postNotificationName:PostListVCShouldFetchListNotification object:self];
+  [postUpdateRef deleteDocumentWithCompletion:^(NSError * _Nullable error) {
+      
+     NSString * message = @"";
+      
+          if (error != nil) {
+            message = @"삭제에 실패했습니다 ㅠㅠ";
+          } else {
+            message = @"삭제에 성공했습니다!";
+          }
+      
+      UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle: UIAlertControllerStyleAlert];
+      
+      UIAlertAction* alertAction = [UIAlertAction actionWithTitle:@"확인" style: UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+     
+      [alert addAction: alertAction];
+      [[NSNotificationCenter defaultCenter]postNotificationName:PostListVCShouldFetchListNotification object:self];
 
-    [self presentViewController:alert animated:YES completion:nil];
+      [self presentViewController:alert animated:YES completion:nil];
 
   }];
+  
 }
 
 

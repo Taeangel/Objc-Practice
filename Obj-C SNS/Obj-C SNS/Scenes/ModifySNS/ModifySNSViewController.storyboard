@@ -15,16 +15,98 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xl5-nm-Y7g">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wUg-BU-Kl8">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1094.6666666666667"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ocp-ak-zDd">
+                                                <rect key="frame" x="20" y="20" width="353" height="400"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="RDA-9E-hQs"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdc-GN-u9B">
+                                                <rect key="frame" x="20" y="440" width="353" height="20.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nej-cx-8OK">
+                                                <rect key="frame" x="20" y="480.33333333333337" width="353" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfM-7I-YS6">
+                                                <rect key="frame" x="20" y="534.33333333333337" width="353" height="20.333333333333371"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zvW-Qw-uxs">
+                                                <rect key="frame" x="20" y="574.66666666666663" width="353" height="499.99999999999989"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="500" id="2O9-QV-hG0"/>
+                                                </constraints>
+                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="20" leading="20" bottom="20" trailing="20"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="wUg-BU-Kl8" firstAttribute="top" secondItem="EAV-UK-kiE" secondAttribute="top" id="0PN-vR-zp8"/>
+                                    <constraint firstItem="wUg-BU-Kl8" firstAttribute="leading" secondItem="EAV-UK-kiE" secondAttribute="leading" id="Hmh-ky-nUg"/>
+                                    <constraint firstItem="wUg-BU-Kl8" firstAttribute="trailing" secondItem="EAV-UK-kiE" secondAttribute="trailing" id="bds-cE-uQt"/>
+                                    <constraint firstItem="wUg-BU-Kl8" firstAttribute="width" secondItem="fei-Ff-IZZ" secondAttribute="width" id="dn4-Zq-Lia"/>
+                                    <constraint firstItem="wUg-BU-Kl8" firstAttribute="bottom" secondItem="EAV-UK-kiE" secondAttribute="bottom" id="v90-aZ-PdP"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="EAV-UK-kiE"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="fei-Ff-IZZ"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xl5-nm-Y7g" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="BND-UO-k1T"/>
+                            <constraint firstItem="Xl5-nm-Y7g" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Dc9-Xn-r6c"/>
+                            <constraint firstItem="Xl5-nm-Y7g" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Yjr-HS-7wR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Xl5-nm-Y7g" secondAttribute="bottom" id="lzb-nu-xA7"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="XH1-er-vaF">
+                        <barButtonItem key="rightBarButtonItem" title="수정하기" id="uiY-C5-UFA" userLabel="수정">
+                            <connections>
+                                <action selector="onModifyBtnClicked:" destination="Y6W-OH-hqX" id="Z1d-CD-vUn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="postContentTextField" destination="zvW-Qw-uxs" id="RbK-J7-qYk"/>
+                        <outlet property="postImageView" destination="Ocp-ak-zDd" id="mu5-4M-tk0"/>
+                        <outlet property="postTitleTextField" destination="Nej-cx-8OK" id="uHx-Ia-XJL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-34"/>
+            <point key="canvasLocation" x="165.64885496183206" y="-25.35211267605634"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
