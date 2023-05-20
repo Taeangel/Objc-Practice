@@ -13,6 +13,8 @@
 		8650EAFC2A19096900864A86 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8650EAFB2A19096900864A86 /* FirebaseDatabase */; };
 		8650EAFE2A19096900864A86 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8650EAFD2A19096900864A86 /* FirebaseFirestore */; };
 		8650EB002A19096900864A86 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8650EAFF2A19096900864A86 /* FirebaseMessaging */; };
+		8650EB042A19132400864A86 /* ChattingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8650EB032A19132400864A86 /* ChattingViewController.m */; };
+		8650EB062A19133500864A86 /* ChattingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8650EB052A19133500864A86 /* ChattingViewController.storyboard */; };
 		86B2B6302A0CACDE004914B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B62F2A0CACDE004914B3 /* GoogleService-Info.plist */; };
 		86B2B6372A0DE6E2004914B3 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6362A0DE6E2004914B3 /* Post.m */; };
 		86B2B63B2A0DF8CA004914B3 /* PostListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B63A2A0DF8CA004914B3 /* PostListViewController.storyboard */; };
@@ -51,6 +53,9 @@
 		863B0E5D2A125F9F0025C74B /* ModifySNSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifySNSViewController.h; sourceTree = "<group>"; };
 		863B0E5E2A125F9F0025C74B /* ModifySNSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifySNSViewController.m; sourceTree = "<group>"; };
 		863B0E602A125FAA0025C74B /* ModifySNSViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifySNSViewController.storyboard; sourceTree = "<group>"; };
+		8650EB022A19132400864A86 /* ChattingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChattingViewController.h; sourceTree = "<group>"; };
+		8650EB032A19132400864A86 /* ChattingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChattingViewController.m; sourceTree = "<group>"; };
+		8650EB052A19133500864A86 /* ChattingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChattingViewController.storyboard; sourceTree = "<group>"; };
 		86B2B62F2A0CACDE004914B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		86B2B6352A0DE6E2004914B3 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		86B2B6362A0DE6E2004914B3 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
@@ -141,6 +146,24 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
+		8650EB012A1912F000864A86 /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				8650EB022A19132400864A86 /* ChattingViewController.h */,
+				8650EB052A19133500864A86 /* ChattingViewController.storyboard */,
+				8650EB032A19132400864A86 /* ChattingViewController.m */,
+			);
+			path = Chatting;
+			sourceTree = "<group>";
+		};
+		8650EB072A19176600864A86 /* UtilView */ = {
+			isa = PBXGroup;
+			children = (
+				86B2B6612A0E8DF5004914B3 /* SeletetUnsplashPhothViewController */,
+			);
+			path = UtilView;
+			sourceTree = "<group>";
+		};
 		86B2B6342A0DE6C6004914B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,25 +177,22 @@
 		86B2B6382A0DF89A004914B3 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				86B2B6612A0E8DF5004914B3 /* SeletetUnsplashPhothViewController */,
+				8650EB072A19176600864A86 /* UtilView */,
 				86B2B6512A0E3732004914B3 /* MainTab */,
-				86B2B63D2A0DF9F7004914B3 /* AddPost */,
-				86B2B63C2A0DF9E7004914B3 /* PostList */,
-				86B2B67B2A121CC0004914B3 /* DetailSNS */,
-				863B0E5C2A125F740025C74B /* ModifySNS */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		86B2B63C2A0DF9E7004914B3 /* PostList */ = {
+		86B2B63C2A0DF9E7004914B3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				86B2B6432A0DFE7A004914B3 /* Cell */,
 				86E56E812A0CAA7600BACFCB /* PostListViewController.h */,
 				86E56E822A0CAA7600BACFCB /* PostListViewController.m */,
 				86B2B63A2A0DF8CA004914B3 /* PostListViewController.storyboard */,
+				86B2B67B2A121CC0004914B3 /* DetailSNS */,
 			);
-			path = PostList;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		86B2B63D2A0DF9F7004914B3 /* AddPost */ = {
@@ -221,6 +241,9 @@
 				86B2B6522A0E3760004914B3 /* MainTabBarController.h */,
 				86B2B6532A0E3760004914B3 /* MainTabBarController.m */,
 				86E56E842A0CAA7600BACFCB /* Main.storyboard */,
+				86B2B63C2A0DF9E7004914B3 /* Home */,
+				8650EB012A1912F000864A86 /* Chatting */,
+				86B2B63D2A0DF9F7004914B3 /* AddPost */,
 			);
 			path = MainTab;
 			sourceTree = "<group>";
@@ -265,6 +288,7 @@
 				86B2B67C2A121CE6004914B3 /* DetailSNSViewController.h */,
 				86B2B67D2A121CE6004914B3 /* DetailSNSViewController.m */,
 				86B2B67F2A121CFC004914B3 /* DetailSNSViewController.storyboard */,
+				863B0E5C2A125F740025C74B /* ModifySNS */,
 			);
 			path = DetailSNS;
 			sourceTree = "<group>";
@@ -383,6 +407,7 @@
 				86B2B6422A0DFA30004914B3 /* AddPostViewController.storyboard in Resources */,
 				863B0E612A125FAA0025C74B /* ModifySNSViewController.storyboard in Resources */,
 				86E56E8B2A0CAA7700BACFCB /* LaunchScreen.storyboard in Resources */,
+				8650EB062A19133500864A86 /* ChattingViewController.storyboard in Resources */,
 				86B2B6602A0E8AFF004914B3 /* SeletetUnsplashPhothViewController.storyboard in Resources */,
 				86B2B6712A0F6D50004914B3 /* PhotoCollectionViewCell.xib in Resources */,
 				86B2B6302A0CACDE004914B3 /* GoogleService-Info.plist in Resources */,
@@ -401,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8650EB042A19132400864A86 /* ChattingViewController.m in Sources */,
 				86B2B6842A121EF9004914B3 /* UIViewController+viewTransition.m in Sources */,
 				86B2B64C2A0E18C7004914B3 /* NSDate+Helpers.m in Sources */,
 				86B2B6372A0DE6E2004914B3 /* Post.m in Sources */,
