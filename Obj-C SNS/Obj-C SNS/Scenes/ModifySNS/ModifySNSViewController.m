@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *postImageView;
 @property (weak, nonatomic) IBOutlet UITextField *postTitleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *postContentTextField;
-
 @property (weak, nonatomic, nullable) FIRFirestore * db;
 
 
@@ -62,13 +61,13 @@
   
   self.db = [FIRFirestore firestore];
   
-  [self setTapGesture];
 }
 
 -(void) editPost {
   NSDictionary * updatedPostDictionary = @{
     @"title": _postTitleTextField.text,
     @"content": _postContentTextField.text,
+    @"image": _imageStr,
     @"updated_at": [FIRTimestamp timestampWithDate:[NSDate date]]
   };
   
@@ -88,6 +87,11 @@
 }
 
 -(void) asdf {
+ 
+}
+
+// MARK: TapGesture
+- (IBAction)imgButtonClicked:(id)sender {
   __weak ModifySNSViewController * weakSelf = self;
   
   SeletetUnsplashPhothViewController * selectPhotoVC = (SeletetUnsplashPhothViewController *) [SeletetUnsplashPhothViewController presentWithNavigationAndReturnVC:self];
@@ -101,19 +105,6 @@
       [strongSelf->_postImageView sd_setImageWithURL:[NSURL URLWithString: selectedUrl]];
     }
   };
-}
-
-// MARK: TapGesture
-
--(void) setTapGesture {
-  UITapGestureRecognizer * tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
-  [_postImageView addGestureRecognizer: tapGestureRecognizer];
-  
-  tapGestureRecognizer.delegate = self;
-}
-
--(void) handleTapGesture: (UITapGestureRecognizer *)recognizer {
-  NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"찍힘?");
 }
 
 @end

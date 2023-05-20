@@ -50,8 +50,8 @@
                placeholderImage:[UIImage systemImageNamed:@"photo.artframe"]];
   
   _postId.text = [@"id: " stringByAppendingString: _post.identifier];
-  _postTitle.text = [@"title: " stringByAppendingString: _post.title];
-  _postContent.text = [@"content: " stringByAppendingString: _post.content];
+  _postTitle.text = _post.title;
+  _postContent.text = _post.content;
   _postCreatedAt.text = [@"createdAt: " stringByAppendingString: [_post.createdAt toString]];
   
   self.navigationItem.title = @"계시물";
@@ -139,6 +139,7 @@
       if (strongSelf) {
         strongSelf->_postTitle.text = post.title;
         strongSelf->_postContent.text = post.content;
+        [strongSelf->_postImageView sd_setImageWithURL:[NSURL URLWithString: post.image]];
       }
     }];
   }
