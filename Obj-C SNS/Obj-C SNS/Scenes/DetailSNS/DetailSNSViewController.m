@@ -54,7 +54,7 @@
   _postContent.text = _post.content;
   _postCreatedAt.text = [@"createdAt: " stringByAppendingString: [_post.createdAt toString]];
   
-  self.navigationItem.title = @"계시물";
+  self.navigationItem.title = @"게시물";
   
   self.db = [FIRFirestore firestore]; 
 }

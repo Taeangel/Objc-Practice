@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		863B0E5F2A125F9F0025C74B /* ModifySNSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 863B0E5E2A125F9F0025C74B /* ModifySNSViewController.m */; };
 		863B0E612A125FAA0025C74B /* ModifySNSViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863B0E602A125FAA0025C74B /* ModifySNSViewController.storyboard */; };
-		8650EA9A2A16003000864A86 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8650EA992A16003000864A86 /* FirebaseAuth */; };
-		8650EA9C2A16003000864A86 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8650EA9B2A16003000864A86 /* FirebaseDatabase */; };
-		8650EA9E2A16003000864A86 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8650EA9D2A16003000864A86 /* FirebaseFirestore */; };
-		8650EAA02A16003000864A86 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8650EA9F2A16003000864A86 /* FirebaseMessaging */; };
+		8650EAFA2A19096900864A86 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8650EAF92A19096900864A86 /* FirebaseAuth */; };
+		8650EAFC2A19096900864A86 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8650EAFB2A19096900864A86 /* FirebaseDatabase */; };
+		8650EAFE2A19096900864A86 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8650EAFD2A19096900864A86 /* FirebaseFirestore */; };
+		8650EB002A19096900864A86 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8650EAFF2A19096900864A86 /* FirebaseMessaging */; };
 		86B2B6302A0CACDE004914B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B62F2A0CACDE004914B3 /* GoogleService-Info.plist */; };
 		86B2B6372A0DE6E2004914B3 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6362A0DE6E2004914B3 /* Post.m */; };
 		86B2B63B2A0DF8CA004914B3 /* PostListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B63A2A0DF8CA004914B3 /* PostListViewController.storyboard */; };
@@ -111,11 +111,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8650EA9C2A16003000864A86 /* FirebaseDatabase in Frameworks */,
-				8650EA9E2A16003000864A86 /* FirebaseFirestore in Frameworks */,
-				8650EAA02A16003000864A86 /* FirebaseMessaging in Frameworks */,
+				8650EAFC2A19096900864A86 /* FirebaseDatabase in Frameworks */,
+				8650EAFE2A19096900864A86 /* FirebaseFirestore in Frameworks */,
+				8650EB002A19096900864A86 /* FirebaseMessaging in Frameworks */,
 				86B2B64F2A0E30D5004914B3 /* SDWebImage in Frameworks */,
-				8650EA9A2A16003000864A86 /* FirebaseAuth in Frameworks */,
+				8650EAFA2A19096900864A86 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,10 +330,10 @@
 			name = "Obj-C SNS";
 			packageProductDependencies = (
 				86B2B64E2A0E30D5004914B3 /* SDWebImage */,
-				8650EA992A16003000864A86 /* FirebaseAuth */,
-				8650EA9B2A16003000864A86 /* FirebaseDatabase */,
-				8650EA9D2A16003000864A86 /* FirebaseFirestore */,
-				8650EA9F2A16003000864A86 /* FirebaseMessaging */,
+				8650EAF92A19096900864A86 /* FirebaseAuth */,
+				8650EAFB2A19096900864A86 /* FirebaseDatabase */,
+				8650EAFD2A19096900864A86 /* FirebaseFirestore */,
+				8650EAFF2A19096900864A86 /* FirebaseMessaging */,
 			);
 			productName = "Obj-C SNS";
 			productReference = 86E56E782A0CAA7600BACFCB /* Obj-C SNS.app */;
@@ -364,7 +364,7 @@
 			mainGroup = 86E56E6F2A0CAA7600BACFCB;
 			packageReferences = (
 				86B2B64D2A0E30D5004914B3 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				8650EA982A16003000864A86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8650EAF82A19096900864A86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 86E56E792A0CAA7600BACFCB /* Products */;
 			projectDirPath = "";
@@ -636,9 +636,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8650EA982A16003000864A86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		8650EAF82A19096900864A86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 9.0.0;
@@ -655,24 +655,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8650EA992A16003000864A86 /* FirebaseAuth */ = {
+		8650EAF92A19096900864A86 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8650EA982A16003000864A86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 8650EAF82A19096900864A86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		8650EA9B2A16003000864A86 /* FirebaseDatabase */ = {
+		8650EAFB2A19096900864A86 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8650EA982A16003000864A86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 8650EAF82A19096900864A86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
-		8650EA9D2A16003000864A86 /* FirebaseFirestore */ = {
+		8650EAFD2A19096900864A86 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8650EA982A16003000864A86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 8650EAF82A19096900864A86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		8650EA9F2A16003000864A86 /* FirebaseMessaging */ = {
+		8650EAFF2A19096900864A86 /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8650EA982A16003000864A86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 8650EAF82A19096900864A86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
 		};
 		86B2B64E2A0E30D5004914B3 /* SDWebImage */ = {
