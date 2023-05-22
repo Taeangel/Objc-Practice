@@ -26,6 +26,23 @@
   [self initSetting];
 }
 
+// MARK: initSetting
+
+- (void) initSetting {
+  _post = _interfacePost;
+  _imageStr = _post.image;
+  
+  [_postImageView sd_setImageWithURL:[NSURL URLWithString:_post.image]
+                    placeholderImage:[UIImage systemImageNamed:@"photo.artframe"]];
+  
+  _postTitleTextField.text = _post.title;
+  _postContentTextField.text = _post.content;
+  
+  self.db = [FIRFirestore firestore];
+}
+
+// MARK: IBActions
+
 - (IBAction)onModifyBtnClicked:(id)sender {
   
   NSString * message = @"정말로 수정하시겠습니까?";
@@ -45,18 +62,7 @@
   [self presentViewController:alert animated:YES completion:nil];
 }
 
-- (void) initSetting {
-  _post = _interfacePost;
-  _imageStr = _post.image;
-  
-  [_postImageView sd_setImageWithURL:[NSURL URLWithString:_post.image]
-                    placeholderImage:[UIImage systemImageNamed:@"photo.artframe"]];
-  
-  _postTitleTextField.text = _post.title;
-  _postContentTextField.text = _post.content;
-  
-  self.db = [FIRFirestore firestore];
-}
+// MARK: EditPost
 
 -(void) editPost {
   NSDictionary * updatedPostDictionary = @{

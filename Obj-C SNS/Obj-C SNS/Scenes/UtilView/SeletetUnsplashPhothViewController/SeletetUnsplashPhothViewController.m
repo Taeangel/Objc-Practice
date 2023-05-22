@@ -148,7 +148,6 @@
   NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL: url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval: 60.0];
   
   [request addValue: @"Client-ID 7K-mFNJtAu-LaCA41rtGVFdm9l4UP9Tz1WyBom4ApqE"  forHTTPHeaderField:@"Authorization"];
-  
   [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
   [request setHTTPMethod:@"GET"];
   
@@ -228,7 +227,6 @@
 }
 
 // MARK: FlowLayout
-
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
   CGFloat width = UIScreen.mainScreen.bounds.size.width / 2 - 20;
