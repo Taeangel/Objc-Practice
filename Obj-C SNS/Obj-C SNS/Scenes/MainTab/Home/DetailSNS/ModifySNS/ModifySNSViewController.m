@@ -50,7 +50,8 @@
 
 - (void) initSetting {
   _post = _interfacePost;
-  
+  _imageStr = _post.image;
+
   [_postImageView sd_setImageWithURL:[NSURL URLWithString:_post.image]
                     placeholderImage:[UIImage systemImageNamed:@"photo.artframe"]];
   
@@ -84,9 +85,6 @@
   }];
 }
 
--(void) asdf {
- 
-}
 
 // MARK: TapGesture
 - (IBAction)imgButtonClicked:(id)sender {
