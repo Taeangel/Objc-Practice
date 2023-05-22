@@ -27,6 +27,9 @@
   
   _postImageView.sd_imageTransition = SDWebImageTransition.fadeTransition;
   _postImageView.contentMode = UIViewContentModeScaleAspectFill;
+  _contentTextField.text = @"메세지를 입력하세요";
+  _contentTextField.textColor = [UIColor lightGrayColor];
+  _contentTextField.delegate = self;
 }
 
 // MARK: IBActions
@@ -36,7 +39,6 @@
   [self dismissViewControllerAnimated:TRUE completion:nil];
 }
 - (IBAction)onAddPostBtnClicked:(UIButton *)sender {
-  NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"포스트 버튼 클릭");
   
   __weak AddPostViewController * weakSelf = self;
   
@@ -102,6 +104,20 @@
     }
   }];
   
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+  if (textView.textColor == [UIColor lightGrayColor]) {
+    textView.text = @"";
+    textView.textColor = [UIColor blackColor];
+  };
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+  if (textView.text.length == 0) {
+    textView.text = @"메세지를 입력하세요";
+    textView.textColor = [UIColor lightGrayColor];
+  }
 }
 
 @end

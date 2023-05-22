@@ -17,7 +17,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AddPostViewController : UIViewController
+@interface AddPostViewController : UIViewController<UITextViewDelegate>
 
 
 @end
