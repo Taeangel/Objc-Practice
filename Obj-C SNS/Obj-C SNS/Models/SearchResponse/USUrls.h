@@ -10,9 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface USUrls : NSObject
-@property (nonatomic, nullable, copy) NSNumber* regular;
-@property (nonatomic, nullable, copy) NSNumber* small;
-@property (nonatomic, nullable, copy) NSNumber* full;
+@property (nonatomic, nullable, copy) NSString* regular;
+@property (nonatomic, nullable, copy) NSString* small;
+@property (nonatomic, nullable, copy) NSString* full;
 
 - (id) initWithDictionary:(NSDictionary<NSString*, id> *) jsonDictionary;
 @end

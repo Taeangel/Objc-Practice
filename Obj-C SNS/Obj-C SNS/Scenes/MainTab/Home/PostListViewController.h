@@ -11,7 +11,6 @@
 #import "Constant.h"
 #import "UITableViewCell+ReuseId.h"
 #import "DetailSNSViewController.h"
-#import "UIViewController+viewTransition.h"
 
 @import FirebaseCore;
 @import FirebaseFirestore;

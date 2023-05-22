@@ -209,7 +209,7 @@
 
     __weak SeletetUnsplashPhothViewController * weakSelf = self;
    
-    _currentPage = [NSNumber numberWithInt:[_currentPage integerValue] + 1];
+    _currentPage = [NSNumber numberWithInt: (int)[_currentPage integerValue] + 1];
     [self searchPhotoApiCall:_currentSearchTerm
                     withPage:_currentPage
               withCompletion:^(USPhotoSearchResponse *  response) {

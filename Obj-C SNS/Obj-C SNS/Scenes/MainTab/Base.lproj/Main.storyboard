@@ -16,16 +16,6 @@
             </objects>
             <point key="canvasLocation" x="205" y="170"/>
         </scene>
-        <!--ChattingViewController-->
-        <scene sceneID="0GC-HJ-DYQ">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ChattingViewController" storyboardName="ChattingViewController" referencedIdentifier="ChattingViewController" id="shL-jH-FP3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ftI-5A-emW"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BaS-sB-cLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="572" y="170"/>
-        </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="zff-19-nGg">
             <objects>
@@ -38,7 +28,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="nUY-Il-P8Y" kind="relationship" relationship="viewControllers" id="8IQ-9r-S5k"/>
-                        <segue destination="shL-jH-FP3" kind="relationship" relationship="viewControllers" id="RD0-qa-zP2"/>
                         <segue destination="EQI-X7-mGc" kind="relationship" relationship="viewControllers" id="PvG-XU-yLI"/>
                     </connections>
                 </tabBarController>

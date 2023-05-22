@@ -36,9 +36,7 @@
   UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle: UIAlertControllerStyleActionSheet];
   
   UIAlertAction* noAction = [UIAlertAction actionWithTitle:@"아닙니다!" style: UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
-  
-  __weak ModifySNSViewController * weakSelf = self;
-  
+    
   UIAlertAction* yesAction  = [UIAlertAction actionWithTitle:@"네 수정하겠습니다!" style: UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
     [self editPost];
     [self.navigationController popViewControllerAnimated:TRUE];
@@ -100,7 +98,6 @@
     NSLog(@"%s , line: %d, %@", __func__, __LINE__, selectedUrl);
     ModifySNSViewController * strongSelf = weakSelf;
     if (strongSelf) {
-      NSURL * imgUrl = [[NSURL alloc] initWithString: selectedUrl];
       strongSelf->_imageStr = selectedUrl;
       [strongSelf->_postImageView sd_setImageWithURL:[NSURL URLWithString: selectedUrl]];
     }

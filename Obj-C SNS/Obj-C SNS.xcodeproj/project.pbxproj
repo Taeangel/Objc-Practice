@@ -13,8 +13,6 @@
 		8650EAFC2A19096900864A86 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8650EAFB2A19096900864A86 /* FirebaseDatabase */; };
 		8650EAFE2A19096900864A86 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8650EAFD2A19096900864A86 /* FirebaseFirestore */; };
 		8650EB002A19096900864A86 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8650EAFF2A19096900864A86 /* FirebaseMessaging */; };
-		8650EB042A19132400864A86 /* ChattingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8650EB032A19132400864A86 /* ChattingViewController.m */; };
-		8650EB062A19133500864A86 /* ChattingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8650EB052A19133500864A86 /* ChattingViewController.storyboard */; };
 		86B2B6302A0CACDE004914B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B62F2A0CACDE004914B3 /* GoogleService-Info.plist */; };
 		86B2B6372A0DE6E2004914B3 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6362A0DE6E2004914B3 /* Post.m */; };
 		86B2B63B2A0DF8CA004914B3 /* PostListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B63A2A0DF8CA004914B3 /* PostListViewController.storyboard */; };
@@ -39,7 +37,6 @@
 		86B2B67A2A11E641004914B3 /* UIScrollView+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6792A11E641004914B3 /* UIScrollView+Helpers.m */; };
 		86B2B67E2A121CE6004914B3 /* DetailSNSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B67D2A121CE6004914B3 /* DetailSNSViewController.m */; };
 		86B2B6802A121CFC004914B3 /* DetailSNSViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B2B67F2A121CFC004914B3 /* DetailSNSViewController.storyboard */; };
-		86B2B6842A121EF9004914B3 /* UIViewController+viewTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B2B6832A121EF9004914B3 /* UIViewController+viewTransition.m */; };
 		86E56E7D2A0CAA7600BACFCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */; };
 		86E56E802A0CAA7600BACFCB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E7F2A0CAA7600BACFCB /* SceneDelegate.m */; };
 		86E56E832A0CAA7600BACFCB /* PostListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E56E822A0CAA7600BACFCB /* PostListViewController.m */; };
@@ -53,9 +50,6 @@
 		863B0E5D2A125F9F0025C74B /* ModifySNSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifySNSViewController.h; sourceTree = "<group>"; };
 		863B0E5E2A125F9F0025C74B /* ModifySNSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifySNSViewController.m; sourceTree = "<group>"; };
 		863B0E602A125FAA0025C74B /* ModifySNSViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifySNSViewController.storyboard; sourceTree = "<group>"; };
-		8650EB022A19132400864A86 /* ChattingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChattingViewController.h; sourceTree = "<group>"; };
-		8650EB032A19132400864A86 /* ChattingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChattingViewController.m; sourceTree = "<group>"; };
-		8650EB052A19133500864A86 /* ChattingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChattingViewController.storyboard; sourceTree = "<group>"; };
 		86B2B62F2A0CACDE004914B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		86B2B6352A0DE6E2004914B3 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		86B2B6362A0DE6E2004914B3 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
@@ -95,8 +89,6 @@
 		86B2B67C2A121CE6004914B3 /* DetailSNSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailSNSViewController.h; sourceTree = "<group>"; };
 		86B2B67D2A121CE6004914B3 /* DetailSNSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailSNSViewController.m; sourceTree = "<group>"; };
 		86B2B67F2A121CFC004914B3 /* DetailSNSViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailSNSViewController.storyboard; sourceTree = "<group>"; };
-		86B2B6822A121EF9004914B3 /* UIViewController+viewTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+viewTransition.h"; sourceTree = "<group>"; };
-		86B2B6832A121EF9004914B3 /* UIViewController+viewTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+viewTransition.m"; sourceTree = "<group>"; };
 		86E56E782A0CAA7600BACFCB /* Obj-C SNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Obj-C SNS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E56E7B2A0CAA7600BACFCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		86E56E7C2A0CAA7600BACFCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,16 +136,6 @@
 				86B2B6582A0E6404004914B3 /* Constants.m */,
 			);
 			path = Constant;
-			sourceTree = "<group>";
-		};
-		8650EB012A1912F000864A86 /* Chatting */ = {
-			isa = PBXGroup;
-			children = (
-				8650EB022A19132400864A86 /* ChattingViewController.h */,
-				8650EB052A19133500864A86 /* ChattingViewController.storyboard */,
-				8650EB032A19132400864A86 /* ChattingViewController.m */,
-			);
-			path = Chatting;
 			sourceTree = "<group>";
 		};
 		8650EB072A19176600864A86 /* UtilView */ = {
@@ -224,8 +206,6 @@
 				86B2B6792A11E641004914B3 /* UIScrollView+Helpers.m */,
 				86B2B6552A0E559B004914B3 /* UIViewController+Popup.h */,
 				86B2B6562A0E559B004914B3 /* UIViewController+Popup.m */,
-				86B2B6822A121EF9004914B3 /* UIViewController+viewTransition.h */,
-				86B2B6832A121EF9004914B3 /* UIViewController+viewTransition.m */,
 				8650EA412A13BE0B00864A86 /* Constant */,
 				86B2B6752A0F72EE004914B3 /* UITableViewCell+ReuseId.h */,
 				86B2B6762A0F72EE004914B3 /* UITableViewCell+ReuseId.m */,
@@ -242,7 +222,6 @@
 				86B2B6532A0E3760004914B3 /* MainTabBarController.m */,
 				86E56E842A0CAA7600BACFCB /* Main.storyboard */,
 				86B2B63C2A0DF9E7004914B3 /* Home */,
-				8650EB012A1912F000864A86 /* Chatting */,
 				86B2B63D2A0DF9F7004914B3 /* AddPost */,
 			);
 			path = MainTab;
@@ -407,7 +386,6 @@
 				86B2B6422A0DFA30004914B3 /* AddPostViewController.storyboard in Resources */,
 				863B0E612A125FAA0025C74B /* ModifySNSViewController.storyboard in Resources */,
 				86E56E8B2A0CAA7700BACFCB /* LaunchScreen.storyboard in Resources */,
-				8650EB062A19133500864A86 /* ChattingViewController.storyboard in Resources */,
 				86B2B6602A0E8AFF004914B3 /* SeletetUnsplashPhothViewController.storyboard in Resources */,
 				86B2B6712A0F6D50004914B3 /* PhotoCollectionViewCell.xib in Resources */,
 				86B2B6302A0CACDE004914B3 /* GoogleService-Info.plist in Resources */,
@@ -426,8 +404,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8650EB042A19132400864A86 /* ChattingViewController.m in Sources */,
-				86B2B6842A121EF9004914B3 /* UIViewController+viewTransition.m in Sources */,
 				86B2B64C2A0E18C7004914B3 /* NSDate+Helpers.m in Sources */,
 				86B2B6372A0DE6E2004914B3 /* Post.m in Sources */,
 				863B0E5F2A125F9F0025C74B /* ModifySNSViewController.m in Sources */,
