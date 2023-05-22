@@ -23,30 +23,10 @@
   [super viewDidLoad];
   
   [self initialSettion];
-  
-  __weak PostListViewController * weakSelf = self;
-  
-  [self fetchPosts:^(NSMutableArray<Post *> * fetchedPost ) {
-    PostListViewController * strongSelf = weakSelf;
-    
-    if (strongSelf) {
-      strongSelf->postList = fetchedPost;
-      [strongSelf->_postListTableView reloadData];
-    }
-  }];
-  
-  [[NSNotificationCenter defaultCenter]
-   addObserver: self
-   selector: @selector(handleNotification:)
-   name:PostListVCShouldFetchListNotification object:nil];
+  [self registerNSNotificationCenter];
 }
 
-- (void)dealloc {
-  [[NSNotificationCenter defaultCenter]
-   removeObserver:self
-   name:PostListVCShouldFetchListNotification
-   object:nil];
-}
+// MARK: initSetting
 
 -(void) initialSettion {
   NSLog(@"%s , line: %d, %@", __func__, __LINE__, @"");
@@ -57,6 +37,32 @@
   UINib * postCellNib = [UINib nibWithNibName:@"PostTableViewCell" bundle:nil];
   
   [_postListTableView registerNib:postCellNib forCellReuseIdentifier: PostTableViewCell.cellReuseIdentifier];
+  
+  __weak PostListViewController * weakSelf = self;
+  [self fetchPosts:^(NSMutableArray<Post *> * fetchedPost ) {
+    PostListViewController * strongSelf = weakSelf;
+    
+    if (strongSelf) {
+      strongSelf->postList = fetchedPost;
+      [strongSelf->_postListTableView reloadData];
+    }
+  }];
+}
+
+// MARK: NSNotificationCenter
+
+- (void)dealloc {
+  [[NSNotificationCenter defaultCenter]
+   removeObserver:self
+   name:PostListVCShouldFetchListNotification
+   object:nil];
+}
+
+-(void)registerNSNotificationCenter {
+  [[NSNotificationCenter defaultCenter]
+   addObserver: self
+   selector: @selector(handleNotification:)
+   name:PostListVCShouldFetchListNotification object:nil];
 }
 
 // MARK: Selector
@@ -77,7 +83,7 @@
   }
 }
 
-// MARK: 테이블뷰 데이터소스
+// MARK: TableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return  postList.count ?: 0;
@@ -110,7 +116,7 @@
   [self.navigationController pushViewController:detailViewController animated:TRUE];
 }
 
-// MARK: 포스트 데이터
+// MARK: PostData
 
 -(void) fetchPosts:(void(^)(NSMutableArray<Post *> *)) completion{
   
@@ -126,23 +132,4 @@
     }
   }];
 }
-
--(void) editPost:(FIRDocumentReference *) postRef {
-  
-  NSDictionary * updatedPostDictionary = @{
-    @"title": @"타이틀 - 수정함",
-    @"content": @"내용 - 수정함",
-    @"updated_at": [FIRTimestamp timestampWithDate:[NSDate date]]
-  };
-  
-  [[[self.db collectionWithPath:@"posts"] documentWithPath: postRef.documentID] updateData:updatedPostDictionary completion:^(NSError * _Nullable error) {
-    if (error != nil) {
-      NSLog(@"Error updating document: %@", error);
-    } else {
-      NSLog(@"Document successfully updated");
-    }
-  }];
-}
-
-
 @end

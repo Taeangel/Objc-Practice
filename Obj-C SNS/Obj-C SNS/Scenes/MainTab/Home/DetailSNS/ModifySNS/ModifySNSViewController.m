@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *postContentTextField;
 @property (weak, nonatomic, nullable) FIRFirestore * db;
 
-
 @end
 
 @implementation ModifySNSViewController
@@ -27,16 +26,14 @@
   [self initSetting];
 }
 
-
 - (IBAction)onModifyBtnClicked:(id)sender {
   
-  
   NSString * message = @"정말로 수정하시겠습니까?";
-    
+  
   UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle: UIAlertControllerStyleActionSheet];
   
   UIAlertAction* noAction = [UIAlertAction actionWithTitle:@"아닙니다!" style: UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
-    
+  
   UIAlertAction* yesAction  = [UIAlertAction actionWithTitle:@"네 수정하겠습니다!" style: UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
     [self editPost];
     [self.navigationController popViewControllerAnimated:TRUE];
@@ -44,14 +41,14 @@
   
   [alert addAction:noAction];
   [alert addAction:yesAction];
-
+  
   [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void) initSetting {
   _post = _interfacePost;
   _imageStr = _post.image;
-
+  
   [_postImageView sd_setImageWithURL:[NSURL URLWithString:_post.image]
                     placeholderImage:[UIImage systemImageNamed:@"photo.artframe"]];
   
@@ -59,7 +56,6 @@
   _postContentTextField.text = _post.content;
   
   self.db = [FIRFirestore firestore];
-  
 }
 
 -(void) editPost {
@@ -81,10 +77,9 @@
     
     [[NSNotificationCenter defaultCenter]postNotificationName:PostListVCShouldFetchListNotification object:self];
     [[NSNotificationCenter defaultCenter]postNotificationName:EditPostNotification object:self];
-
+    
   }];
 }
-
 
 // MARK: TapGesture
 - (IBAction)imgButtonClicked:(id)sender {

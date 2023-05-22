@@ -14,8 +14,7 @@
 @implementation MainTabBarController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
   self.delegate = self;
 }
 // MARK: UITabBarControllerDelegate
@@ -29,6 +28,5 @@
   }
   return YES;
 }
-
 
 @end

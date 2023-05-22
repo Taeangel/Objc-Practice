@@ -25,10 +25,32 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.db = [FIRFirestore firestore];
 
   [self initSetting];
+  [self registerNSNotificationCenter];
+}
+
+// MARK: initSetting
+
+-(void) initSetting {
+  _post = _interfacePost;
+  self.db = [FIRFirestore firestore];
+
+  [_postImageView sd_setImageWithURL:[NSURL URLWithString:_post.image]
+               placeholderImage:[UIImage systemImageNamed:@"photo.artframe"]];
   
+  _postId.text = [@"id: " stringByAppendingString: _post.identifier];
+  _postTitle.text = _post.title;
+  _postContent.text = _post.content;
+  _postCreatedAt.text = [@"createdAt: " stringByAppendingString: [_post.createdAt toString]];
+  
+  self.navigationItem.title = @"게시물";
+  
+  self.db = [FIRFirestore firestore]; 
+}
+
+// MARK: NSNotificationCenter
+-(void)registerNSNotificationCenter {
   [[NSNotificationCenter defaultCenter]
    addObserver: self
    selector: @selector(handleNotification:)
@@ -42,22 +64,26 @@
    object:nil];
 }
 
+- (void) handleNotification:(NSNotification *) notification {
+  
+  if ([[notification name] isEqualToString:EditPostNotification]) {
+    __weak DetailSNSViewController * weakSelf = self;
 
--(void) initSetting {
-  _post = _interfacePost;
-  
-  [_postImageView sd_setImageWithURL:[NSURL URLWithString:_post.image]
-               placeholderImage:[UIImage systemImageNamed:@"photo.artframe"]];
-  
-  _postId.text = [@"id: " stringByAppendingString: _post.identifier];
-  _postTitle.text = _post.title;
-  _postContent.text = _post.content;
-  _postCreatedAt.text = [@"createdAt: " stringByAppendingString: [_post.createdAt toString]];
-  
-  self.navigationItem.title = @"게시물";
-  
-  self.db = [FIRFirestore firestore]; 
+    FIRDocumentReference *docRef = [[_db collectionWithPath:@"posts"] documentWithPath:_post.identifier];
+    [docRef getDocumentWithCompletion:^(FIRDocumentSnapshot *snapshot, NSError *error) {
+      Post * post = [[Post alloc] initWithSnapshot:snapshot];
+      DetailSNSViewController * strongSelf = weakSelf;
+
+      if (strongSelf) {
+        strongSelf->_postTitle.text = post.title;
+        strongSelf->_postContent.text = post.content;
+        [strongSelf->_postImageView sd_setImageWithURL:[NSURL URLWithString: post.image]];
+      }
+    }];
+  }
 }
+
+// MARK: IBActions
 
 - (IBAction)onDeleteBtnClicked:(id)sender {
   
@@ -125,24 +151,4 @@
       [self presentViewController:alert animated:YES completion:nil];
   }];
 }
-
-- (void) handleNotification:(NSNotification *) notification {
-  
-  if ([[notification name] isEqualToString:EditPostNotification]) {
-    __weak DetailSNSViewController * weakSelf = self;
-
-    FIRDocumentReference *docRef = [[_db collectionWithPath:@"posts"] documentWithPath:_post.identifier];
-    [docRef getDocumentWithCompletion:^(FIRDocumentSnapshot *snapshot, NSError *error) {
-      Post * post = [[Post alloc] initWithSnapshot:snapshot];
-      DetailSNSViewController * strongSelf = weakSelf;
-
-      if (strongSelf) {
-        strongSelf->_postTitle.text = post.title;
-        strongSelf->_postContent.text = post.content;
-        [strongSelf->_postImageView sd_setImageWithURL:[NSURL URLWithString: post.image]];
-      }
-    }];
-  }
-}
-
 @end
