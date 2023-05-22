@@ -26,7 +26,6 @@
   _db = [FIRFirestore firestore];
   
   _postImageView.sd_imageTransition = SDWebImageTransition.fadeTransition;
-  _postImageView.sd_imageIndicator = SDWebImageProgressIndicator.defaultIndicator;
   _postImageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
