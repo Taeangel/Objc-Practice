@@ -18,7 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *photoSearchBar;
 @property (strong, nullable) dispatch_block_t debounceSearchInputTask;
-
 @property (weak, nonatomic) IBOutlet UICollectionView *photoListCollectionView;
 
 @end

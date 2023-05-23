@@ -34,7 +34,6 @@
   
   [_postImageView sd_setImageWithURL:[NSURL URLWithString:_post.image]
                     placeholderImage:[UIImage systemImageNamed:@"photo.artframe"]];
-  
   _postTitleTextField.text = _post.title;
   _postContentTextField.text = _post.content;
   

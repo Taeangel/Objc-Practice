@@ -127,6 +127,8 @@
   [self.navigationController pushViewController: modifyViewController animated:TRUE];
 }
 
+// MARK: deletePost
+
 -(void) deletePost: (NSString *) postIdentifier {
   
   FIRDocumentReference * postUpdateRef = [[_db collectionWithPath:@"posts"] documentWithPath:_post.identifier];
