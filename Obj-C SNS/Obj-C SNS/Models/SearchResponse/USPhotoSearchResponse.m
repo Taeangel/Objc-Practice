@@ -9,7 +9,6 @@
 
 @implementation USPhotoSearchResponse
 
-//@property (nona)
 
 - (id)initWithDictionary:(NSDictionary<NSString *,id> * ) jsonDictionary {
   self = [super init];

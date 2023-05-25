@@ -26,15 +26,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-  _currentPage = [[NSNumber alloc] initWithInt: 1];
-  _currentSearchTerm = @"";
-  _isLoding = NO;
   
   [self initialSettion];
 }
 
 - (void)initialSettion {
+  
+  _currentPage = [[NSNumber alloc] initWithInt: 1];
+  _currentSearchTerm = @"";
+  _isLoding = NO;
+  
   _photoListCollectionView.dataSource = self;
   _photoListCollectionView.delegate = self;
   

@@ -12,7 +12,6 @@
   Post * _post;
 }
 @property (weak, nonatomic, nullable) FIRFirestore * db;
-
 @property (weak, nonatomic) IBOutlet UILabel *postId;
 @property (weak, nonatomic) IBOutlet UILabel *postTitle;
 @property (weak, nonatomic) IBOutlet UILabel *postContent;
@@ -73,7 +72,7 @@
     [docRef getDocumentWithCompletion:^(FIRDocumentSnapshot *snapshot, NSError *error) {
       Post * post = [[Post alloc] initWithSnapshot:snapshot];
       DetailSNSViewController * strongSelf = weakSelf;
-
+      
       if (strongSelf) {
         strongSelf->_postTitle.text = post.title;
         strongSelf->_postContent.text = post.content;
@@ -109,21 +108,15 @@
   
   [alert addAction:noAction];
   [alert addAction:yesAction];
-
   [self presentViewController:alert animated:YES completion:nil];
-
 }
 
 - (IBAction)onModifyPostBtnClicked:(id)sender {
   
   NSString * className = NSStringFromClass([ModifySNSViewController class]);
-
   UIStoryboard * storyboard = [UIStoryboard storyboardWithName:className bundle:nil];
-
   ModifySNSViewController * modifyViewController = [storyboard instantiateViewControllerWithIdentifier:className];
-
   modifyViewController.interfacePost = _post;
-
   [self.navigationController pushViewController: modifyViewController animated:TRUE];
 }
 
@@ -132,7 +125,6 @@
 -(void) deletePost: (NSString *) postIdentifier {
   
   FIRDocumentReference * postUpdateRef = [[_db collectionWithPath:@"posts"] documentWithPath:_post.identifier];
-  
   [postUpdateRef deleteDocumentWithCompletion:^(NSError * _Nullable error) {
       
      NSString * message = @"";

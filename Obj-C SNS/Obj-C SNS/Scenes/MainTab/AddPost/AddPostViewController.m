@@ -12,7 +12,6 @@
 }
 
 @property (weak, nonatomic, nullable) FIRFirestore * db;
-
 @property (weak, nonatomic) IBOutlet UITextField *titleTestField;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *postImageView;
@@ -103,7 +102,6 @@
       completion();
     }
   }];
-  
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {

@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 // MARK: notification names
 
-FOUNDATION_EXPORT NSString * const PostListVCShouldFetchListNotification;
+extern NSString * const PostListVCShouldFetchListNotification;
 FOUNDATION_EXPORT NSString * const EditPostNotification;
 
 
